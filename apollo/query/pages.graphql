@@ -1,0 +1,9 @@
+query Pages {
+  pages: allPages {
+    headerCtaText
+    _meta {
+      id
+      name
+    }
+  }
+}
