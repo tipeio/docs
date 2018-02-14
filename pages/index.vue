@@ -1,8 +1,10 @@
 <template>
   <div class="page">
-    <Hero :cta="page.headerCtaText" :content="page.mainContent"/>
-    <section>
-    </section>
+    <Hero
+      :cta="page.headerCtaText"
+      :content="page.mainContent"
+      :tweet="tweet"
+    />
   </div>
 </template>
 
@@ -19,18 +21,29 @@ export default {
   computed: {
     page () {
       return this.pages[0] || {}
+    },
+    tweet () {
+      return this.tweets[0] || {}
     }
   },
   data () {
     return {
       loading: 0,
-      pages: []
+      pages: [],
+      tweets: []
     }
   },
   apollo: {
-    pages: {
+    data: {
       query: pagesQuery,
-      prefetch: true
+      prefetch: true,
+      manual: true,
+      result ({data, loading}) {
+        if (!loading) {
+          this.pages = data.pages
+          this.tweets = data.tweets
+        }
+      }
     }
   },
   transition: 'slide-right'

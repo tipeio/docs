@@ -53,9 +53,7 @@
               </a>
             </div>
             <div class="column is-narrow">
-              <a class="button is-text" ref="twitter">
-
-              </a>
+              <a class="button is-text" ref="twitter"></a>
             </div>
           </div>
         </div>
@@ -71,16 +69,17 @@ export default {
   },
   props: {
     content: String,
-    cta: String
+    cta: String,
+    tweet: Object
   },
   mounted () {
     window.twttr.widgets.createShareButton(
       '/',
       this.$refs.twitter,
       {
-        text: 'Just checked out @Tipeio and Nuxt starter project!',
-        url: 'https://tipe.io',
-        hastags: 'javascript,react,angular,vue,jamstack,node'
+        text: this.tweet.message,
+        url: this.tweet.url,
+        hashtags: this.tweet.hashtags
       }
     )
   }
@@ -89,7 +88,6 @@ export default {
 <style lang="stylus" scoped>
   .hero
     height 80vh
-    // background-color #5468de
 </style>
 
 

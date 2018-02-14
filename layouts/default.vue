@@ -2,9 +2,9 @@
   <div>
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="/">
+        <nuxt-link class="navbar-item" to="/">
           <img src="https://cdn.tipe.io/tipe/tipe-1024x1024.png?w=128">
-        </a>
+        </nuxt-link>
       </div>
       <div class="navbar-menu">
         <div class="navbar-start">

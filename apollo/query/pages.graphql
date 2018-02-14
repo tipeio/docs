@@ -7,4 +7,9 @@ query Pages {
       name
     }
   }
+  tweets: allTweetExamples {
+    message
+    url
+    hashtags
+  }
 }
