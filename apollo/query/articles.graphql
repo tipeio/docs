@@ -1,5 +1,5 @@
 query Articles {
-  articles: allArticles {
+  articles: allArticleExamples {
     title
     urlSlug
     body
@@ -8,7 +8,7 @@ query Articles {
       url
     }
     author {
-      ... on Author {
+      ... on AuthorExample {
         name
         bio
       }

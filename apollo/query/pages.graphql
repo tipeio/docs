@@ -1,5 +1,5 @@
 query Pages {
-  pages: allPages {
+  pages: allPageExamples {
     headerCtaText
     mainContent
     _meta {
