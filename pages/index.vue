@@ -1,31 +1,24 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        nuxt-tipe-starter
-      </h1>
-      <span>{{real}}</span>
-      <h2 class="subtitle">
-        Get started with Tipe + Nuxt + Vue
-      </h2>
-      <div class="links">
-        <nuxt-link to="/hello" class="button--green">hello</nuxt-link>
-      </div>
-    </div>
-  </section>
+  <div class="page">
+    <Hero :cta="page.headerCtaText" :content="page.mainContent"/>
+    <section>
+    </section>
+  </div>
 </template>
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
 import pagesQuery from '~/apollo/query/pages.graphql'
+import Hero from '~/components/Hero.vue'
+
 export default {
   components: {
-    AppLogo
+    AppLogo,
+    Hero
   },
   computed: {
-    real () {
-      return this.pages || ['nope']
+    page () {
+      return this.pages[0]
     }
   },
   data () {
@@ -37,9 +30,6 @@ export default {
   apollo: {
     pages: {
       query: pagesQuery,
-      result (data) {
-        console.log('result ', data)
-      },
       prefetch: true
     }
   }

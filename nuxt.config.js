@@ -22,14 +22,13 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  modules: ['@nuxtjs/apollo'],
+  modules: ['@nuxtjs/apollo', '@nuxtjs/bulma', '@nuxtjs/font-awesome'],
   apollo: {
     clientConfigs: {
       default: '~/apollo/default.js'
     }
   },
   css: [
-    'normalize.css'
   ],
   /*
   ** Customize the progress bar color

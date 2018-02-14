@@ -1,5 +1,18 @@
 <template>
   <div>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="https://cdn.tipe.io/tipe/tipe-1024x1024.png?w=128">
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <nuxt-link to="/" class="navbar-item">About</nuxt-link>
+          <nuxt-link to="/blog" class="navbar-item">Blog</nuxt-link>
+        </div>
+      </div>
+    </nav>
     <nuxt/>
   </div>
 </template>
