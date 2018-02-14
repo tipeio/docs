@@ -8,6 +8,7 @@ export default {
   computed: {
     content () {
       Marked.setOptions({
+        gfm: true,
         highlight: function (code) {
           return HighlightJs.highlightAuto(code).value
         }

@@ -43,13 +43,18 @@
         <div class="column is-6">
           <div class="columns">
             <div class="column is-narrow">
-              <a class="button is-primary" href="https://tipe.io">
+              <a class="button is-primary" href="https://tipe.io" target="_blank">
                 Sign up
               </a>
             </div>
             <div class="column is-narrow">
-              <a class="button is-primary is-outlined">
+              <a class="button is-primary is-outlined" href="https://docs.tipe.io" target="_blank">
                 {{ cta }}
+              </a>
+            </div>
+            <div class="column is-narrow">
+              <a class="button is-text" ref="twitter">
+
               </a>
             </div>
           </div>
@@ -67,6 +72,17 @@ export default {
   props: {
     content: String,
     cta: String
+  },
+  mounted () {
+    window.twttr.widgets.createShareButton(
+      '/',
+      this.$refs.twitter,
+      {
+        text: 'Just checked out @Tipeio and Nuxt starter project!',
+        url: 'https://tipe.io',
+        hastags: 'javascript,react,angular,vue,jamstack,node'
+      }
+    )
   }
 }
 </script>

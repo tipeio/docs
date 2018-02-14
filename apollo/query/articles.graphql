@@ -2,6 +2,7 @@ query Articles {
   articles: allArticles {
     title
     urlSlug
+    body
     featuredImage {
       name
       url

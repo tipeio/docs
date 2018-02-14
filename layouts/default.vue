@@ -35,11 +35,11 @@ html {
 }
 
 .page {
-  transition: all .5s cubic-bezier(.55,0,.1,1);
+  transition: all .3s cubic-bezier(.55,0,.1,1);
 }
 
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s
+  transition: opacity .3s
 }
 .page-enter, .page-leave-active {
   opacity: 0
