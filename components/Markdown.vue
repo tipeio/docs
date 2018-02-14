@@ -13,7 +13,7 @@ export default {
         }
       })
 
-      return Marked(this.markdown)
+      return Marked(this.markdown || '')
     }
   },
   props: {

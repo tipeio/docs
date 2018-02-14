@@ -2,10 +2,6 @@ query Pages {
   pages: allPages {
     headerCtaText
     mainContent
-    headerImage {
-      name
-      url
-    }
     _meta {
       id
       name

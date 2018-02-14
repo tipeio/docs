@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     page () {
-      return this.pages[0]
+      return this.pages[0] || {}
     }
   },
   data () {
@@ -32,7 +32,8 @@ export default {
       query: pagesQuery,
       prefetch: true
     }
-  }
+  },
+  transition: 'slide-right'
 }
 </script>
 

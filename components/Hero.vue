@@ -6,7 +6,7 @@
 
         <div class="column is-narrow has-text-centered">
           <figure class="image is-128x128">
-            <img src="https://cdn.tipe.io/tipe/tipe-1024x1024.png?w=256">
+            <img src="https://cdn.tipe.io/tipe/tipe-1024x1024.png?w=256" alt="Tipe, content backend for all your apps">
           </figure>
           <h2 class="subtitle">Tipe</h2>
         </div>
@@ -17,7 +17,7 @@
 
         <div class="column is-narrow has-text-centered">
           <figure class="image is-128x128">
-            <img src="https://cdn.tipe.io/tipe/nuxt.png?w=256">
+            <img src="https://cdn.tipe.io/tipe/nuxt.png?w=256" alt="Nuxt">
           </figure>
           <h2 class="subtitle">Nuxt</h2>
         </div>
@@ -26,7 +26,7 @@
         </div>
         <div class="column is-narrow has-text-centered">
           <figure class="image is-128x128">
-            <img src="https://cdn.tipe.io/tipe/graphql.png?w=256">
+            <img src="https://cdn.tipe.io/tipe/graphql.png?w=256" alt="GraphQL">
           </figure>
           <h2 class="subtitle">GraphQL</h2>
         </div>

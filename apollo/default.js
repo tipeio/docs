@@ -5,7 +5,6 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 export default (ctx) => {
 
   const middlewareLink = new ApolloLink((operation, forward) => {
-    console.log(ctx.env)
     operation.setContext({
       headers: {
         Authorization: ctx.env.TIPE_API_KEY,
