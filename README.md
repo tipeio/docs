@@ -44,7 +44,7 @@ Most of the content you see on the app is from Tipe. Take a look at the `/apollo
 * Fork and cut a PR, we'll check it out :sunglasses:
 
 ## Related
-* [Tipe + GraphQL + React starter]()
+* [Tipe + GraphQL + React starter](https://github.com/tipeio/tipe-react-starter)
 
 ## License
 MIT
