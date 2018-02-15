@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://tipe.io?ref=github-starter"><img src="https://cdn.tipe.io/tipe/tgn.png?w=800" alt="Tipe + GraphQL + Vue"></a>
+  <a href="https://tipe.io?ref=github-starter"><img src="https://cdn.tipe.io/tipe/tgn.png?dpr=2&w=800" alt="Tipe + GraphQL + Vue" width="800"></a>
   <br>
   Tipe + GraphQL + Vue
   <br>
