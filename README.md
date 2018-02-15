@@ -1,16 +1,16 @@
 <h1 align="center">
   <br>
-  <a href="https://tipe.io"><img src="https://cdn.tipe.io/tipe/tgn.png?w=800" alt="Tipe + GraphQL + Vue"></a>
+  <a href="https://tipe.io?ref=github-starter"><img src="https://cdn.tipe.io/tipe/tgn.png?w=800" alt="Tipe + GraphQL + Vue"></a>
   <br>
   Tipe + GraphQL + Vue
   <br>
 </h1>
 
 
-> :tada: Starter repo for [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org/), together with [GraphQL](http://graphql.org/) and [Tipe](https://tipe.io) :100:
+> :tada: Starter repo for [Vue](https://vuejs.org/) and [Nuxt](https://nuxtjs.org/), together with [GraphQL](http://graphql.org/) and [Tipe](https://tipe.io?ref=github-starter) :100:
 
 ## What is Tipe
-[Tipe](https://tipe.io), pronounced *type*, is a content backend for all your apps. If you have any non-user generated content in your apps, you should use Tipe to manage it. You and content creators can use our web app to create and publish content, then consume that same content with our **REST** and **GraphQL** API's. 
+[Tipe](https://tipe.io?ref=github-starter), pronounced *type*, is a content backend for all your apps. If you have any non-user generated content in your apps, you should use Tipe to manage it. You and content creators can use our web app to create and publish content, then consume that same content with our **REST** and **GraphQL** API's. 
 
 ## What is this repo
 This repo is a solid starting point for anyone looking to build a Universal, SPA, or Static site with Vue and Tipe. The repo consists of a simple blog application that consumes content from Tipe via GraphQL.
@@ -23,7 +23,7 @@ This repo is a solid starting point for anyone looking to build a Universal, SPA
 
 ## Things you'll need
 * Node *(version is whatever Nuxt needs)*
-* An account on [Tipe](https://tipe.io)
+* An account on [Tipe](https://tipe.io?ref=github-starter)
 	* **Tipe is free right now!**
 
 ## Getting started
@@ -45,6 +45,13 @@ Most of the content you see on the app is from Tipe. Take a look at the `/apollo
 
 ## Related
 * [Tipe + GraphQL + React starter](https://github.com/tipeio/tipe-react-starter)
+
+## Tipe Community
+* [twitter @TipeIO](https://twitter.com/tipeio)
+* [facebook](https://facebook.com/TipeCMS)
+* [slack](https://join.slack.com/t/tipe-community/shared_invite/enQtMzE0NTAwMTMwNzM5LTk0ZWIyYWQ0YWY3ZGEwYWE2ZmVkNmRjMTMzMDU5YWI5ZjdkODcxNzNjMzU2NTU1NmM2M2MyN2QyYWJhNzc5NjE)
+* [github](https://github.com/tipeio)
+* [tipe-awesome](https://github.com/tipeio/awesome-tipe)
 
 ## License
 MIT
