@@ -16,7 +16,7 @@
 This repo is a solid starting point for anyone looking to build a universal, SPA, or static site with Vue and Tipe. The repo consists of a simple blog application that consumes content from Tipe via GraphQL.
 
 ## Tech in this repo
-* [Nuxt]() and [Vue] ()
+* [Nuxt]() and [Vue]()
 * [GraphQL]() and [Apollo]()
 * [Bulma]()
 
