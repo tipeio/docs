@@ -7,7 +7,7 @@
 </h1>
 
 
-> :tada: Starter repo for [Vue]() and [Nuxt](), together with [GraphQL]() and [Tipe](https://tipe.io) :100:
+> :tada: Starter repo for [Vue]() and [Nuxt](https://nuxtjs.org/), together with [GraphQL](http://graphql.org/) and [Tipe](https://tipe.io) :100:
 
 ## What is Tipe
 [Tipe](https://tipe.io), pronounced *type*, is a content backend for all your apps. If you have any non-user generated content in your apps, you should use Tipe to manange it. You and content creators can use our web app to create and publish content, then consume that same content with our **REST** and **GraphQL** API's. 
@@ -16,9 +16,9 @@
 This repo is a solid starting point for anyone looking to build a universal, SPA, or static site with Vue and Tipe. The repo consists of a simple blog application that consumes content from Tipe via GraphQL.
 
 ## Tech in this repo
-* [Nuxt]() and [Vue]()
-* [GraphQL]() and [Apollo]()
-* [Bulma]()
+* [Nuxt](https://nuxtjs.org/) and [Vue](https://vuejs.org/)
+* [GraphQL](http://graphql.org/) and [Apollo](https://www.apollographql.com/client)
+* [Bulma](https://bulma.io/)
 
 
 ## Things you'll need
