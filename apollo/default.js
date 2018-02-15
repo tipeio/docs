@@ -15,7 +15,7 @@ export default (ctx) => {
   })
 
   const httpLink = new HttpLink({
-    uri: 'http://localhost:5000/graphql'
+    uri: 'httpS://api.tipe.io/graphql'
   })
 
   const appLink = ApolloLink.from([
