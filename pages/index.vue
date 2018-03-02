@@ -1,48 +1,48 @@
 <template>
   <div class="page">
-    <Hero
-      :cta="page.headerCtaText"
-      :content="page.mainContent"
-      :tweet="tweet"
+    <HomeHero
+      :header="home.header"
+      :sections="sections"
     />
   </div>
 </template>
-
 <script>
 import AppLogo from '~/components/AppLogo.vue'
-import pagesQuery from '~/apollo/query/pages.graphql'
-import Hero from '~/components/Hero.vue'
+import HomeHero from '~/components/HomeHero.vue'
+import HomeQuery from '~/apollo/query/home.graphql'
 
 export default {
   components: {
     AppLogo,
-    Hero
+    HomeHero
   },
   computed: {
-    page () {
-      return this.pages[0] || {}
-    },
-    tweet () {
-      return this.tweets[0] || {}
+    sections () {
+      return this.home._meta
+        ? [
+            this.home.concepts,
+            this.home.apiRef,
+            this.home.guides,
+            this.home.faq
+        ] : []
     }
   },
   data () {
     return {
       loading: 0,
-      pages: [],
-      tweets: []
+      home: {}
     }
   },
   apollo: {
     data: {
-      query: pagesQuery,
+      query: HomeQuery,
+      variables: {
+        id: '5a99d08fa459270013f89629'
+      },
       prefetch: true,
       manual: true,
       result ({data, loading}) {
-        if (!loading) {
-          this.pages = data.pages
-          this.tweets = data.tweets
-        }
+        this.home = data.home
       }
     }
   },

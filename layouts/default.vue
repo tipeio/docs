@@ -56,4 +56,8 @@ html {
   transform: translate(-30px, 0);
 }
 
+.layout-padding {
+  padding: 0px 5rem;
+}
+
 </style>

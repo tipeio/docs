@@ -36,12 +36,12 @@ export default {
       title: this.article.title
     }
   },
-  apollo: {
-    articles: {
-      query: articlesQuery,
-      prefetch: true
-    }
-  },
+  // apollo: {
+  //   articles: {
+  //     query: articlesQuery,
+  //     prefetch: true
+  //   }
+  // },
   transition(to, from) {
     if (!from || to.path === '/blog') return 'slide-left'
     return 'slide-right'
@@ -52,5 +52,3 @@ export default {
   .page
     padding 5rem 10rem
 </style>
-
-
