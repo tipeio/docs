@@ -35,7 +35,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  @require '~assets/theme/colors.styl'
   .home-hero
     height 80vh
-    background-color lightgrey
+    background-image linear-gradient(73deg, color-primary, color-light)
+    
+    .doc-section
+      margin 10px 0px
 </style>
