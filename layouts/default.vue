@@ -21,6 +21,7 @@
 
 <style lang="stylus">
 @require '~assets/theme/colors.styl'
+@require '~assets/theme/util.styl'
 html
   font-size 16px
   word-spacing 1px
@@ -55,7 +56,15 @@ html
   transform translate(-30px, 0)
 
 .layout-padding
-  padding 0px 100px
+  padding 0px 20px
+  +mq(tablet)
+    padding 0px 50px
+  +mq(desktop)
+    padding 0 100px
+  +mq(widescreen)
+    padding 0 150px
+  +mq(fullhd)
+    padding 0 220px
 
 nav
 .navbar
