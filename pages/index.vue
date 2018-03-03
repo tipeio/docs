@@ -10,12 +10,9 @@
         <h3 class="is-3">Integrations</h3>
         <small class="subtitle is-6">Get started in minutes</small>
       </div>
-      <div class="integrations columns is-center is-multiline">
+      <div class="integrations columns is-multiline">
         <div class="integration column is-3" v-for="integration of integrations" :key="integration">
-          <div class="img">
-            <img src="https://cdn.tipe.io/tipe/cat-agency.png?w=120" alt="">
-          </div>
-          <span>vue</span>
+          <Integration :tech="integration" />
         </div>
       </div>
     </section>
@@ -27,10 +24,7 @@
       </div>
       <div class="integrations columns is-center is-multiline">
         <div class="integration column is-3" v-for="integration of integrations" :key="integration">
-          <div class="img">
-            <img src="https://cdn.tipe.io/tipe/cat-agency.png?w=120" alt="">
-          </div>
-          <span>vue</span>
+          <Integration :tech="integration" />
         </div>
       </div>
     </section>
@@ -40,15 +34,25 @@
 import AppLogo from '~/components/AppLogo.vue'
 import HomeHero from '~/components/HomeHero.vue'
 import HomeQuery from '~/apollo/query/home.graphql'
+import Integration from '~/components/integration.vue'
 
 export default {
   components: {
     AppLogo,
-    HomeHero
+    HomeHero,
+    Integration
   },
   computed: {
     integrations () {
-      return [1,2,3,4,5,6]
+      return [
+        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
+        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
+        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
+        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
+        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
+        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
+        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}}
+      ]
     },
     sections () {
       return this.home._meta

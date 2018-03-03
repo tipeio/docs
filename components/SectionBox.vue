@@ -1,20 +1,22 @@
 <template>
   <nuxt-link to="/" class="section-box-container">
-    <div class="section-box content columns is-gapless is-mobile is-centered">
-      <div class="column is-2-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd">
-        <div class="art">
-          <img :src="section.art.url + '?w=120&h120'" :alt="section.title">
+    <article class="media section-box">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img :src="section.art.url + '?w=128&h128'" :alt="section.title">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <div class="title is-5">
+            <h3>{{ section.title }}</h3>
+          </div>
+          <div class="body">
+            <Markdown :markdown="section.body" />
+          </div>
         </div>
       </div>
-      <div class="column is-10-mobile is-9-tablet is-10-desktop is-10-widescreen is-10-fullhd">
-        <div class="title is-5">
-          <h3>{{ section.title }}</h3>
-        </div>
-        <div class="body">
-          <Markdown :markdown="section.body" />
-        </div>
-      </div>
-    </div>
+    </article>
   </nuxt-link>
 </template>
 <script>
