@@ -16,6 +16,7 @@
       </div>
     </nav>
     <nuxt/>
+    <footer class="footer"></footer>
   </div>
 </template>
 
@@ -81,5 +82,7 @@ nav
     &:hover
       background-color initial
       color white
+.footer
+  background-color color-primary-grey
 
 </style>

@@ -37,7 +37,6 @@ export default {
 <style lang="stylus" scoped>
   @require '~assets/theme/colors.styl'
   .home-hero
-    min-height 80vh
     height 100%
     background-image linear-gradient(73deg, color-primary, color-light)
     padding-top 40px
