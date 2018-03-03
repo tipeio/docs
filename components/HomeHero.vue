@@ -1,7 +1,7 @@
 <template>
   <div class="home-hero">
     <div class="content layout-padding">
-      <div class="header title is-3">
+      <div class="header title is-4">
         <h1>{{ header }}</h1>
       </div>
       <div class="sections columns is-multiline is-centered">
@@ -39,7 +39,12 @@ export default {
   .home-hero
     height 80vh
     background-image linear-gradient(73deg, color-primary, color-light)
-    
+    padding-top 40px
+    padding-bottom 40px
+
     .doc-section
-      margin 10px 0px
+      margin 12px 0px
+
+    .content *
+      color white !important
 </style>

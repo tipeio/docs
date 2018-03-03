@@ -1,11 +1,11 @@
 <template>
   <nuxt-link to="/" class="section-box-container">
-    <div class="section-box content columns">
+    <div class="section-box content columns is-mobile">
       <div class="art column is-one-third">
         <img :src="section.art.url + '?w=200'" :alt="section.title">
       </div>
       <div class="column is-two-thirds">
-        <div class="title is-4">
+        <div class="title is-5">
           <h3>{{ section.title }}</h3>
         </div>
         <div class="body">
