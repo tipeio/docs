@@ -51,12 +51,12 @@ export default {
       title: 'blog'
     }
   },
-  apollo: {
-    articles: {
-      query: articlesQuery,
-      prefetch: true
-    }
-  },
+  // apollo: {
+  //   articles: {
+  //     query: articlesQuery,
+  //     prefetch: true
+  //   }
+  // },
   transition(to, from) {
     if (!from || to.name === 'index') return 'slide-right'
     return 'slide-left'
@@ -67,5 +67,3 @@ export default {
 .bloglist
   padding 0px 15rem
 </style>
-
-

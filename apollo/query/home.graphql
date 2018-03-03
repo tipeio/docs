@@ -1,0 +1,102 @@
+query Home($id: ID!) {
+  home: DocLanding(id: $id) {
+    header
+    concepts {
+      ... on DocSection {
+        title
+        body
+        art {
+          id
+          name
+          size
+          url
+          mime
+        }
+      }
+
+      # Tipe system metadata
+      _meta {
+        id
+        name
+        updatedAt
+        createdAt
+        published
+      }
+    }
+    apiRef {
+      ... on DocSection {
+        art {
+          id
+          name
+          size
+          url
+          mime
+        }
+        body
+        title
+      }
+
+      # Tipe system metadata
+      _meta {
+        id
+        name
+        updatedAt
+        createdAt
+        published
+      }
+    }
+    faq {
+      ... on DocSection {
+        art {
+          id
+          name
+          size
+          url
+          mime
+        }
+        body
+        title
+      }
+
+      # Tipe system metadata
+      _meta {
+        id
+        name
+        updatedAt
+        createdAt
+        published
+      }
+    }
+    guides {
+      ... on DocSection {
+        art {
+          id
+          name
+          size
+          url
+          mime
+        }
+        body
+        title
+      }
+
+      # Tipe system metadata
+      _meta {
+        id
+        name
+        updatedAt
+        createdAt
+        published
+      }
+    }
+
+    # Tipe system metadata
+    _meta {
+      id
+      name
+      updatedAt
+      createdAt
+      published
+    }
+  }
+}
