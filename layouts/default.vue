@@ -56,15 +56,20 @@ html
   transform translate(-30px, 0)
 
 .layout-padding
-  padding 0px 20px
+  padding-left 20px
+  padding-right 20px
   +mq(tablet)
-    padding 0px 50px
+    padding-left 50px
+    padding-right 50px
   +mq(desktop)
-    padding 0 100px
+    padding-left 100px
+    padding-right 100px
   +mq(widescreen)
-    padding 0 150px
+    padding-left 150px
+    padding-right 150px
   +mq(fullhd)
-    padding 0 220px
+    padding-left 220px
+    padding-right 220px
 
 nav
 .navbar

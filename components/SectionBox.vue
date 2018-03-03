@@ -1,12 +1,12 @@
 <template>
   <nuxt-link to="/" class="section-box-container">
     <div class="section-box content columns is-gapless is-mobile is-centered">
-      <div class="column is-3-mobile is-2-desktop">
+      <div class="column is-2-mobile is-3-tablet is-2-desktop is-2-widescreen is-2-fullhd">
         <div class="art">
           <img :src="section.art.url + '?w=120&h120'" :alt="section.title">
         </div>
       </div>
-      <div class="column is-9-mobile is-10-desktop">
+      <div class="column is-10-mobile is-9-tablet is-10-desktop is-10-widescreen is-10-fullhd">
         <div class="title is-5">
           <h3>{{ section.title }}</h3>
         </div>

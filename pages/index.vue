@@ -4,6 +4,21 @@
       :header="home.header"
       :sections="sections"
     />
+
+    <section class="section layout-padding">
+      <div class="header content">
+        <h3 class="is-3">SDKs and Integrations</h3>
+        <small class="subtitle is-6">Get started in minutes</small>
+      </div>
+      <div class="integrations columns is-center is-multiline">
+        <div class="integration column is-3" v-for="integration of integrations" :key="integration">
+          <div class="img">
+            <img src="https://cdn.tipe.io/tipe/cat-agency.png?w=120" alt="">
+          </div>
+          <span>vue</span>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -17,6 +32,9 @@ export default {
     HomeHero
   },
   computed: {
+    integrations () {
+      return [1,2,3,4,5,6]
+    },
     sections () {
       return this.home._meta
         ? [
