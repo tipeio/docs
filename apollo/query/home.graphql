@@ -1,4 +1,4 @@
-query Home($id: ID!) {
+query Home($id: ID!, $folderId: ID!) {
   home: DocLanding(id: $id) {
     header
     concepts {
@@ -97,6 +97,24 @@ query Home($id: ID!) {
       updatedAt
       createdAt
       published
+    }
+  }
+
+  integrations: Folder(id: $folderId) {
+    id
+    documents {
+      _meta {
+        id
+      }
+      ... on Integration {
+        name
+        order
+        path
+        logo {
+          url
+          name
+        }
+      }
     }
   }
 }

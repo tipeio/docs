@@ -43,17 +43,6 @@ export default {
     Integration
   },
   computed: {
-    integrations () {
-      return [
-        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
-        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
-        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
-        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
-        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
-        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}},
-        {name: 'Vue', logo: {url: 'https://cdn.tipe.io/tipe/cat-agency.png'}}
-      ]
-    },
     sections () {
       return this.home._meta
         ? [
@@ -67,19 +56,22 @@ export default {
   data () {
     return {
       loading: 0,
-      home: {}
+      home: {},
+      integrations: []
     }
   },
   apollo: {
     data: {
       query: HomeQuery,
       variables: {
-        id: '5a99d08fa459270013f89629'
+        id: '5a99d08fa459270013f89629',
+        folderId: "5a9aedcd53911b00135b838c"
       },
       prefetch: true,
       manual: true,
       result ({data, loading}) {
         this.home = data.home
+        this.integrations = data.integrations.documents
       }
     }
   },

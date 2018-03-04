@@ -57,8 +57,8 @@ html
   transform translate(-30px, 0)
 
 .layout-padding
-  padding-left 20px
-  padding-right 20px
+  padding-left 30px
+  padding-right 30px
   +mq(tablet)
     padding-left 50px
     padding-right 50px
@@ -83,6 +83,6 @@ nav
       background-color initial
       color white
 .footer
-  background-color color-primary-grey
+  background-image linear-gradient(73deg, color-primary-grey, color-primary-grey-light)
 
 </style>
