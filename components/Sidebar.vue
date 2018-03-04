@@ -6,11 +6,11 @@
       </p>
       <ul class="menu-list" v-if="folder.documents.length">
         <li v-for="document of folder.documents" :key="document._meta.id">
-          <nuxt-link :to="{path: folder.name + document.path}">{{ document.navName }}</nuxt-link>
+          <nuxt-link :to="{path: folderName(folder) + document.path}">{{ document.navName }}</nuxt-link>
 
           <ul v-if="getDocs(folder.folders, document).length">
             <li v-for="subdoc of getDocs(folder.folders, document)" :key="subdoc._meta.id">
-              <nuxt-link to="index">
+              <nuxt-link :to="{path: folderName(folder) + document.path + subdoc.path}">
                 {{ subdoc.navName }}
               </nuxt-link>
             </li>
@@ -87,6 +87,9 @@ export default {
     }
   },
   methods: {
+    folderName (folder) {
+      return folder.name.split(' ').join('-').toLowerCase()
+    },
     getDocs (folders, document) {
       const matchedFolder = folders.find(folder => folder.name.trim().toLowerCase() === document._meta.name.trim().toLowerCase())
       if (!matchedFolder) {

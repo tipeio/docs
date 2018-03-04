@@ -36,9 +36,9 @@ export default {
   components: {
     Sidebar
   },
-  data () {
-    return {
-      docs: {}
+  computed: {
+    docs () {
+      return this.$store.state.docsFolder
     }
   },
   methods: {
@@ -61,22 +61,22 @@ export default {
       }, state)
     }
   },
-  apollo: {
-    docs: {
-      query: DocsQuery,
-      prefetch: true,
-      manual: true,
-      variables: {
-        id: '5a9b7bb201dd4300134cd6dd'
-      },
-      result ({data, loading}) {
-        if (!loading) {
-          this.docs = data.docs
-          this.saveToStore(data.docs)
-        }
-      }
-    }
-  },
+  // apollo: {
+  //   docs: {
+  //     query: DocsQuery,
+  //     prefetch: true,
+  //     manual: true,
+  //     variables: {
+  //       id: '5a9b7bb201dd4300134cd6dd'
+  //     },
+  //     result ({data, loading}) {
+  //       if (!loading) {
+  //         this.docs = data.docs
+  //         this.saveToStore(data.docs)
+  //       }
+  //     }
+  //   }
+  // },
 }
 </script>
 <style lang="stylus">

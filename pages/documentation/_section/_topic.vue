@@ -3,9 +3,9 @@
     <section class="main-content">
       <div class="container">
         <div class="content">
-          <dov class="header">
-            <h1 class="title is-3">{{ document.navName }}</h1>
-          </dov>
+          <div class="header">
+            <h1 class="title is-3 check-here">{{ doc.navName }}</h1>
+          </div>
         </div>
       </div>
     </section>
@@ -16,19 +16,25 @@
 export default {
   layout: 'docs',
   components: {},
-  computed: {
-    document () {
-      return this.$store.state.docs.docs['/' + this.$route.params.topic] || {}
-    }
-  },
-  created () {
-    console.log(this.document)
-    console.log(this.$store.state.docs.docs)
-  },
+  // computed: {
+  //   document () {
+  //     return this.$store.state.docs.docs['/' + this.$route.params.topic] || {}
+  //   }
+  // },
+  // created () {
+  //   console.log(this.document)
+  //   console.log(this.$store.state.docs.docs)
+  // },
   data () {
     return {
       section: this.$route.params.section,
-      topic: this.$route.params.topic
+      topic: this.$route.params.topic,
+      doc: {}
+    }
+  },
+  asyncData ({ params, error, payload }) {
+    return {
+      doc: payload || {}
     }
   }
 }

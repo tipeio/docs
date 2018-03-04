@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/documentation/concepts" class="section-box-container">
+  <nuxt-link to="/documentation/concesdfdpts" class="section-box-container">
     <article class="media section-box">
       <figure class="media-left">
         <p class="image is-64x64">

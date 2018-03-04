@@ -3,10 +3,23 @@ const env = process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 if (env === 'development') {
   require('dotenv').config()
 }
+const getRoutes = require('./getRoutes')
 module.exports = {
   /*
   ** Headers of the page
   */
+  generate: {
+    routes () {
+      return getRoutes()
+        .then(data => {
+          return Object.keys(data)
+            .map(route => ({
+              route: '/documentation/' + route,
+              payload: data[route]
+            }))
+        })
+    }
+  },
   env: {
     TIPE_API_KEY: process.env.TIPE_API_KEY,
     TIPE_ID: process.env.TIPE_ID
