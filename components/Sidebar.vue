@@ -6,11 +6,13 @@
       </p>
       <ul class="menu-list" v-if="folder.documents.length">
         <li v-for="document of folder.documents" :key="document._meta.id">
-          <a>{{ document.navName }}</a>
+          <nuxt-link :to="{path: folder.name + document.path}">{{ document.navName }}</nuxt-link>
 
           <ul v-if="getDocs(folder.folders, document).length">
             <li v-for="subdoc of getDocs(folder.folders, document)" :key="subdoc._meta.id">
-              <a>{{ subdoc.navName }}</a>
+              <nuxt-link to="index">
+                {{ subdoc.navName }}
+              </nuxt-link>
             </li>
           </ul>
         </li>
