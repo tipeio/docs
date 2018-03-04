@@ -1,0 +1,40 @@
+query Docs($id: ID!) {
+  docs: Folder(id: $id) {
+    id
+    folders {
+      name
+      id
+      documents {
+       _meta {
+          id
+          name
+        }
+        ... on DocPage {
+          navName
+          docs
+          path
+        }
+      }
+      folders {
+        id
+        name
+        documents {
+          _meta {
+            id
+            name
+          }
+          ... on DocPage {
+          	navName
+            docs
+            path
+          }
+        }
+      }
+    }
+    documents {
+      _meta {
+        id
+      }
+    }
+  }
+}

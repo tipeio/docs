@@ -19,10 +19,10 @@
     </nav>
     <div>
       <Sidebar class="is-hidden-mobile"
-        title="Documentation"
+        :docs="docs"
       />
       <div class="sidebar-main">
-        <nuxt/>
+        <nuxt />
       </div>
     </div>
   </div>
@@ -30,10 +30,53 @@
 
 <script>
 import Sidebar from '~/components/Sidebar.vue'
+import DocsQuery from '~/apollo/query/docs.graphql'
+
 export default {
   components: {
     Sidebar
-  }
+  },
+  data () {
+    return {
+      docs: {}
+    }
+  },
+  methods: {
+    saveToStore (docs) {
+      const state = this.groupByPaths(docs.folders)
+      this.$store.commit('docs/addDocs', state)
+    },
+    groupByPaths (folders, state = {}) {
+      return folders.reduce((_state, folder) => {
+        const name = folder.name
+        const documents = [...folder.documents]
+          .forEach(document => {
+            _state[document.path] = document
+          })
+
+        if (folder.folders && folder.folders.length) {
+          this.groupByPaths(folder.folders, _state)
+        }
+        return _state
+      }, state)
+    }
+  },
+  apollo: {
+    docs: {
+      query: DocsQuery,
+      prefetch: true,
+      manual: true,
+      variables: {
+        id: '5a9b7bb201dd4300134cd6dd'
+      },
+      result ({data, loading}) {
+        if (!loading) {
+          this.docs = data.docs
+          this.saveToStore(data.docs)
+        }
+      }
+    }
+  },
 }
 </script>
 <style lang="stylus">
@@ -112,7 +155,7 @@ nav
 .footer
   background-image linear-gradient(73deg, color-primary-grey, color-primary-grey-light)
 .sidebar-main
-  height 100vh - 3.25rem
+  // height 100vh - 3.25rem
   padding-left sidebar-width
   +mq(mobile)
     padding-left 0px

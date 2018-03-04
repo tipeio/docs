@@ -2,7 +2,7 @@
   <div class="page">
     <section class="main-content">
       <div class="container docs">
-        <h1>hello</h1>
+        <h1>{{ section }}</h1>
       </div>
     </section>
   </div>
@@ -14,7 +14,7 @@ export default {
   components: {},
   data () {
     return {
-      tech: this.$route.params.tech
+      section: this.$route.params.section
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/" class="section-box-container">
+  <nuxt-link to="/documentation/concepts" class="section-box-container">
     <article class="media section-box">
       <figure class="media-left">
         <p class="image is-64x64">
@@ -28,10 +28,12 @@ export default {
     Markdown
   },
   props: {
-    section: Object,
-    default () {
-      return {
-        art: {}
+    section: {
+      type: Object,
+      default () {
+        return {
+          art: {}
+        }
       }
     }
   }
