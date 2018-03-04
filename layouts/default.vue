@@ -1,22 +1,23 @@
 <template>
-  <div>
+  <div class="app">
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <nuxt-link class="navbar-item" to="/">
-          <img src="https://cdn.tipe.io/tipe/tipe-1024x1024.png?w=128">
-        </nuxt-link>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-start">
-          <nuxt-link to="/" class="navbar-item">Tipe Concepts</nuxt-link>
-          <nuxt-link to="/" class="navbar-item">Guides</nuxt-link>
-          <nuxt-link to="/" class="navbar-item">API Reference</nuxt-link>
-          <nuxt-link to="/" class="navbar-item">FAQ</nuxt-link>
+      <div class="container">
+        <div class="navbar-brand">
+          <nuxt-link class="navbar-item" to="/">
+            <img src="https://cdn.tipe.io/tipe/tipe-1024x1024.png?w=128">
+          </nuxt-link>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <nuxt-link to="/" class="navbar-item">Tipe Concepts</nuxt-link>
+            <nuxt-link to="/" class="navbar-item">Guides</nuxt-link>
+            <nuxt-link to="/" class="navbar-item">API Reference</nuxt-link>
+            <nuxt-link to="/" class="navbar-item">FAQ</nuxt-link>
+          </div>
         </div>
       </div>
     </nav>
     <nuxt/>
-    <footer class="footer"></footer>
   </div>
 </template>
 
@@ -36,6 +37,17 @@ html
   box-sizing border-box
   margin 0
   font-family "Lato", "Helvetica Neue", "Roboto", Arial, sans-serif
+
+html,.page
+  height 100%
+
+body,#__layout
+  display flex
+  flex-direction column
+  min-height 100vh
+
+#__nuxt,.app
+  flex 1
 
 .page
   transition all .3s cubic-bezier(.55,0,.1,1)

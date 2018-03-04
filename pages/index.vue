@@ -4,30 +4,40 @@
       :header="home.header"
       :sections="sections"
     />
-
-    <section class="section layout-padding">
-      <div class="header content">
-        <h3 class="is-3">Integrations</h3>
-        <small class="subtitle is-6">Get started in minutes</small>
-      </div>
-      <div class="integrations columns is-multiline">
-        <div class="integration column is-3" v-for="integration of integrations" :key="integration">
-          <Integration :tech="integration" />
+    <section class="section">
+      <div class="container">
+        <div class="header content">
+          <h3 class="title is-3">Integrations</h3>
+          <h5 class="subtitle is-5">Get started in minutes</h5>
+        </div>
+        <div class="integrations columns is-multiline">
+          <div class="integration column is-3" v-for="integration of integrations" :key="integration.name">
+            <Integration :tech="integration" />
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section layout-padding">
-      <div class="header content">
-        <h3 class="is-3">Open Source and SDKs</h3>
-        <small class="subtitle is-6">Get started in minutes</small>
-      </div>
-      <div class="integrations columns is-center is-multiline">
-        <div class="integration column is-3" v-for="integration of integrations" :key="integration">
-          <Integration :tech="integration" />
+    <section class="section">
+      <div class="container">
+        <div class="header content">
+          <h3 class="title is-3">Open Source and SDKs</h3>
+          <h5 class="subtitle is-5">Get started in minutes</h5>
+        </div>
+        <div class="integrations columns is-center is-multiline">
+          <div class="integration column is-3" v-for="integration of integrations" :key="integration.name">
+            <Integration :tech="integration" />
+          </div>
         </div>
       </div>
     </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="content">
+          hello
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 <script>
@@ -78,34 +88,3 @@ export default {
   transition: 'slide-right'
 }
 </script>
-
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   @require '~assets/theme/colors.styl'
   @require '~assets/theme/util.styl'
 

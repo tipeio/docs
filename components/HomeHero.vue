@@ -1,12 +1,14 @@
 <template>
-  <div class="home-hero">
-    <div class="content layout-padding">
-      <div class="header title is-4">
-        <h1>{{ header }}</h1>
-      </div>
-      <div class="sections columns is-multiline is-centered">
-        <div class="doc-section column is-half" v-for="section of sections" :key="section._meta.id">
-          <SectionBox :section="section" />
+  <div class="home-hero hero">
+    <div class="container">
+      <div class="content">
+        <div class="header title is-4">
+          <h1>{{ header }}</h1>
+        </div>
+        <div class="sections columns is-multiline is-centered">
+          <div class="doc-section column is-half" v-for="section of sections" :key="section._meta.id">
+            <SectionBox :section="section" />
+          </div>
         </div>
       </div>
     </div>
@@ -37,7 +39,6 @@ export default {
 <style lang="stylus" scoped>
   @require '~assets/theme/colors.styl'
   .home-hero
-    height 100%
     background-image linear-gradient(73deg, color-primary, color-light)
     padding-top 40px
     padding-bottom 40px
