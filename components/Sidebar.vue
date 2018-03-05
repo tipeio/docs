@@ -104,7 +104,7 @@ export default {
   mounted () {
     if (process.client) {
       const activeLink = window.document.querySelector('.is-active-link-exact')
-      activeLink.scrollIntoView()
+      activeLink.scrollIntoView(false)
     }
   }
 }

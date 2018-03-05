@@ -19,8 +19,14 @@ export default {
   },
   props: {
     markdown: String
+  },
+  head () {
+    return {
+      link: [
+        {rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css'},
+        {rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css'}
+      ]
+    }
   }
 }
 </script>
-
-

@@ -8,9 +8,7 @@
       </figure>
       <div class="media-content">
         <div class="content">
-          <div class="title is-5">
-            <h3>{{ section.title }}</h3>
-          </div>
+          <h3 class="is-4 title">{{ section.title }}</h3>
           <div class="body">
             <Markdown :markdown="section.body" />
           </div>
@@ -44,9 +42,16 @@ export default {
   @require '~assets/theme/colors.styl'
   @require '~assets/theme/util.styl'
 
+  .content figure
+    margin-bottom 0px
+
   .section-box-container
     display flex
     height 100%
+
+    article.media
+      align-items center
+
     .section-box
       width 100%
       border-radius 3px
@@ -58,14 +63,19 @@ export default {
       &:hover
         shadow-hover()
 
+      .image img
+        border-radius 3px
+
+      .title
+        margin-bottom 5px
+
+
     a
       text-decoration none
       color white
       &:hover
         color white
 
-    .art
-      width 60px
     .content *
       color white !important
 

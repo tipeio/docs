@@ -21,7 +21,7 @@ export default {
   computed: {
     to () {
       return {
-        path: 'documentation/integrations' + this.tech.path
+        path: '/documentation/guides' + this.tech.path
       }
     }
   },
