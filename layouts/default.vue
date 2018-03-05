@@ -18,6 +18,13 @@
       </div>
     </nav>
     <nuxt/>
+    <footer class="footer">
+      <div class="container">
+        <div class="content">
+          hello
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 

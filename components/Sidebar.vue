@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar">
     <div v-for="folder of docs.folders" :key="folder.name">
-      <p class="menu-label is-hidden-touch menu-section">
+      <p class="menu-label is-hidden-touch menu-section has-text-weight-bold has-text-black-bis">
         {{ folder.name }}
       </p>
       <ul class="menu-list" v-if="folder.documents.length">
@@ -100,6 +100,12 @@ export default {
         return matchedFolder.documents || []
       }
     }
+  },
+  mounted () {
+    if (process.client) {
+      const activeLink = window.document.querySelector('.is-active-link-exact')
+      activeLink.scrollIntoView()
+    }
   }
 }
 </script>
@@ -108,16 +114,24 @@ export default {
   @require '~assets/theme/util.styl'
   @require '~assets/theme/colors.styl'
   .sidebar
-    height 100vh - (3.25rem * 3)
+    height 100vh - (3.25rem * 2)
     width sidebar-width
     overflow-y auto
-    padding 15px
-
+    padding 15px 15px 75px 25px
+    background-color alpha(color-primary-grey-light, 5%)
     .menu-section
       padding-top 1em
 
-    .is-active-link-exact
-      border 0px
-      background-color color-primary
-      color white
+    .menu-list
+      a:hover
+        background-color alpha(color-primary-grey-light, 15%)
+
+      .is-active-link-exact
+        background-color color-primary
+        color white
+
+        &:hover
+          background-color color-primary
+          color white !important
+
 </style>
