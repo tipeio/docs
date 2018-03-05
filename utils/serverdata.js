@@ -57,11 +57,11 @@ const groupByPaths = (folders, state = {}, names = []) => {
   }, state)
 }
 
-const formatRoutes = (resp) => {
+export const formatRoutes = (resp) => {
   return groupByPaths(resp.data.root.folders)
 }
 
-module.exports = () => {
+export const getFolder = () => {
   return fetch('https://api.tipe.io/graphql', {
     method: 'POST',
     body: JSON.stringify({
@@ -77,9 +77,4 @@ module.exports = () => {
     }
   })
     .then(res => res.json())
-    .then(formatRoutes)
-    .catch(error => {
-      console.error(error)
-      process.exit(1)
-    })
 }

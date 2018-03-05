@@ -1,18 +1,20 @@
 <template>
-  <nuxt-link to="/" class="section-box-container">
-    <div class="section-box content columns is-mobile">
-      <div class="art column is-one-third">
-        <img :src="section.art.url + '?w=200'" :alt="section.title">
-      </div>
-      <div class="column is-two-thirds">
-        <div class="title is-5">
-          <h3>{{ section.title }}</h3>
+  <nuxt-link :to="{path: 'documentation' + section.path}" class="section-box-container">
+    <article class="media section-box">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img :src="section.art.url + '?w=128&h128'" :alt="section.title">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <h3 class="is-4 title">{{ section.title }}</h3>
+          <div class="body">
+            <Markdown :markdown="section.body" />
+          </div>
         </div>
-        <div class="body">
-          <Markdown :markdown="section.body" />
-        </div>
       </div>
-    </div>
+    </article>
   </nuxt-link>
 </template>
 <script>
@@ -24,21 +26,32 @@ export default {
     Markdown
   },
   props: {
-    section: Object,
-    default () {
-      return {
-        art: {}
+    section: {
+      type: Object,
+      default () {
+        return {
+          art: {}
+        }
       }
     }
   }
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
   @require '~assets/theme/colors.styl'
   @require '~assets/theme/util.styl'
 
+  .content figure
+    margin-bottom 0px
+
   .section-box-container
+    display flex
+    height 100%
+
+    article.media
+      align-items center
+
     .section-box
       width 100%
       border-radius 3px
@@ -49,6 +62,13 @@ export default {
       color white
       &:hover
         shadow-hover()
+
+      .image img
+        border-radius 3px
+
+      .title
+        margin-bottom 5px
+
 
     a
       text-decoration none

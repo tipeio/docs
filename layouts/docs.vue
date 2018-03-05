@@ -17,17 +17,68 @@
         </div>
       </div>
     </nav>
-    <nuxt/>
-    <footer class="footer">
-      <div class="container">
-        <div class="content">
-          hello
-        </div>
+    <div class="columns">
+      <div class="column is-narrow">
+        <Sidebar class="is-hidden-mobile" :docs="docs" />
       </div>
-    </footer>
+      <div class="column is-9">
+        <nuxt />
+      </div>
+    </div>
   </div>
 </template>
 
+<script>
+import Sidebar from '~/components/Sidebar.vue'
+import DocsQuery from '~/apollo/query/docs.graphql'
+
+export default {
+  components: {
+    Sidebar
+  },
+  computed: {
+    docs () {
+      return this.$store.state.docsFolder
+    }
+  },
+  methods: {
+    saveToStore (docs) {
+      const state = this.groupByPaths(docs.folders)
+      this.$store.commit('docs/addDocs', state)
+    },
+    groupByPaths (folders, state = {}) {
+      return folders.reduce((_state, folder) => {
+        const name = folder.name
+        const documents = [...folder.documents]
+          .forEach(document => {
+            _state[document.path] = document
+          })
+
+        if (folder.folders && folder.folders.length) {
+          this.groupByPaths(folder.folders, _state)
+        }
+        return _state
+      }, state)
+    }
+  },
+  // apollo: {
+  //   docs: {
+  //     query: DocsQuery,
+  //     prefetch: true,
+  //     manual: true,
+  //     variables: {
+  //       id: '5a9b7bb201dd4300134cd6dd'
+  //     },
+  //     result ({data, loading}) {
+  //       if (!loading) {
+  //         this.docs = data.docs
+  //         this.saveToStore(data.docs)
+  //       }
+  //     }
+  //   }
+  // },
+}
+</script>
 <style lang="stylus">
 @require '~assets/theme/colors.styl'
 @require '~assets/theme/util.styl'
@@ -51,7 +102,7 @@ html,.page
 body,#__layout
   display flex
   flex-direction column
-  min-height 100vh
+  min-height 100vh - (3.25rem * 2)
 
 #__nuxt,.app
   flex 1
@@ -60,7 +111,7 @@ body,#__layout
   transition all .3s cubic-bezier(.55,0,.1,1)
 
 .page-enter-active, .page-leave-active
-  transition opacity .3s
+  transition opacity .2s
 
 .page-enter, .page-leave-active
   opacity 0
@@ -103,5 +154,8 @@ nav
       color white
 .footer
   background-image linear-gradient(73deg, color-primary-grey, color-primary-grey-light)
-
+.sidebar-main
+  padding-left sidebar-width
+  +mq(mobile)
+    padding-left 0px
 </style>
