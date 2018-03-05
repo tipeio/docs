@@ -17,11 +17,11 @@
         </div>
       </div>
     </nav>
-    <div>
-      <Sidebar class="is-hidden-mobile"
-        :docs="docs"
-      />
-      <div class="sidebar-main">
+    <div class="columns">
+      <div class="column is-narrow">
+        <Sidebar class="is-hidden-mobile" :docs="docs" />
+      </div>
+      <div class="column is-9">
         <nuxt />
       </div>
     </div>
@@ -102,7 +102,7 @@ html,.page
 body,#__layout
   display flex
   flex-direction column
-  min-height 100vh
+  min-height 100vh - (3.25rem * 2)
 
 #__nuxt,.app
   flex 1
@@ -155,7 +155,6 @@ nav
 .footer
   background-image linear-gradient(73deg, color-primary-grey, color-primary-grey-light)
 .sidebar-main
-  // height 100vh - 3.25rem
   padding-left sidebar-width
   +mq(mobile)
     padding-left 0px

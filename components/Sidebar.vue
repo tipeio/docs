@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar">
     <div v-for="folder of docs.folders" :key="folder.name">
-      <p class="menu-label is-hidden-touch">
+      <p class="menu-label is-hidden-touch menu-section">
         {{ folder.name }}
       </p>
       <ul class="menu-list" v-if="folder.documents.length">
@@ -108,13 +108,13 @@ export default {
   @require '~assets/theme/util.styl'
   @require '~assets/theme/colors.styl'
   .sidebar
-    height 100vh - 3.25rem * 2
-    position fixed
-    left 0
+    height 100vh - (3.25rem * 3)
     width sidebar-width
     overflow-y auto
     padding 15px
-    border-right 1px solid color-light
+
+    .menu-section
+      padding-top 1em
 
     .is-active-link-exact
       border 0px
