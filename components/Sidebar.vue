@@ -6,11 +6,13 @@
       </p>
       <ul class="menu-list" v-if="folder.documents.length">
         <li v-for="document of folder.documents" :key="document._meta.id">
-          <nuxt-link :to="{path: folderName(folder) + document.path}">{{ document.navName }}</nuxt-link>
+          <nuxt-link :to="{path: '/documentation/' + folderName(folder) + document.path}">
+            {{ document.navName }}
+          </nuxt-link>
 
           <ul v-if="getDocs(folder.folders, document).length">
             <li v-for="subdoc of getDocs(folder.folders, document)" :key="subdoc._meta.id">
-              <nuxt-link :to="{path: folderName(folder) + document.path + subdoc.path}">
+              <nuxt-link :to="{path: '/documentation/' + folderName(folder) + document.path + subdoc.path}">
                 {{ subdoc.navName }}
               </nuxt-link>
             </li>
@@ -114,6 +116,8 @@ export default {
     padding 15px
     border-right 1px solid color-light
 
-    .is-active
+    .is-active-link-exact
+      border 0px
       background-color color-primary
+      color white
 </style>

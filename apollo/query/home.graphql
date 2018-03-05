@@ -5,6 +5,7 @@ query Home($id: ID!, $folderId: ID!) {
       ... on DocSection {
         title
         body
+        path
         art {
           id
           name
@@ -32,6 +33,7 @@ query Home($id: ID!, $folderId: ID!) {
           url
           mime
         }
+        path
         body
         title
       }
@@ -54,6 +56,7 @@ query Home($id: ID!, $folderId: ID!) {
           url
           mime
         }
+        path
         body
         title
       }
@@ -76,6 +79,7 @@ query Home($id: ID!, $folderId: ID!) {
           url
           mime
         }
+        path
         body
         title
       }

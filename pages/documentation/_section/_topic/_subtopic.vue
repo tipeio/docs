@@ -4,7 +4,10 @@
       <div class="container">
         <div class="content">
           <div class="header">
-            <h1 class="title is-3">{{ doc.navName }}</h1>
+            <h1 class="title is-3 check-here">{{ doc.navName }}</h1>
+          </div>
+          <div class="body">
+            <Markdown :markdown="doc.docs" />
           </div>
         </div>
       </div>
@@ -13,22 +16,22 @@
 </template>
 
 <script>
+import Markdown from '~/components/Markdown.vue'
 export default {
   layout: 'docs',
-  components: {},
+  components: {
+    Markdown
+  },
   data () {
     return {
-      section: this.$route.params.section,
-      topic: this.$route.params.topic
+      doc: {}
     }
   },
   asyncData ({ params, error, payload, store }) {
-    if (payload) {
-      return {doc: payload}
-    } else {
-      
+    const document = store.state.docsByRoutes[params.section + '/' + params.topic + '/' + params.subtopic]
+    return {
+      doc: payload || document
     }
-
   }
 }
 </script>

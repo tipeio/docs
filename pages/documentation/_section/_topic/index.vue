@@ -6,6 +6,9 @@
           <div class="header">
             <h1 class="title is-3 check-here">{{ doc.navName }}</h1>
           </div>
+          <div class="body">
+            <Markdown :markdown="doc.docs" />
+          </div>
         </div>
       </div>
     </section>
@@ -13,28 +16,20 @@
 </template>
 
 <script>
+import Markdown from '~/components/Markdown.vue'
 export default {
   layout: 'docs',
-  components: {},
-  // computed: {
-  //   document () {
-  //     return this.$store.state.docs.docs['/' + this.$route.params.topic] || {}
-  //   }
-  // },
-  // created () {
-  //   console.log(this.document)
-  //   console.log(this.$store.state.docs.docs)
-  // },
+  components: {
+    Markdown
+  },
   data () {
     return {
-      section: this.$route.params.section,
-      topic: this.$route.params.topic,
       doc: {}
     }
   },
-  asyncData ({ params, error, payload }) {
+  asyncData ({ params, error, payload, store }) {
     return {
-      doc: payload || {}
+      doc: payload || store.state.docsByRoutes[params.section + '/' + params.topic]
     }
   }
 }

@@ -5,6 +5,11 @@ if (env === 'development') {
 }
 const getRoutes = require('./getRoutes')
 module.exports = {
+  router: {
+    linkActiveClass: 'is-active-link',
+    linkExactActiveClass: 'is-active-link-exact',
+    base: '/'
+  },
   /*
   ** Headers of the page
   */
