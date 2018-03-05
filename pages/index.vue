@@ -37,7 +37,7 @@
 import AppLogo from '~/components/AppLogo.vue'
 import HomeHero from '~/components/HomeHero.vue'
 import HomeQuery from '~/apollo/query/home.graphql'
-import Integration from '~/components/integration.vue'
+import Integration from '~/components/Integration.vue'
 
 export default {
   components: {
