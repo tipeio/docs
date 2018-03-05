@@ -1,10 +1,17 @@
 <template>
   <div class="page">
-    <section class="main-content">
+    <section class="section">
       <div class="container">
         <div class="content">
           <h2 class="title is-3">{{ title }}</h2>
         </div>
+        <ul>
+          <li v-for="topic of topics" :key="topic.navName">
+            <nuxt-link :to="'/documentation/' + $route.params.section +  topic.path">
+              {{ topic.navName }}
+            </nuxt-link>
+          </li>
+        </ul>
       </div>
     </section>
   </div>
