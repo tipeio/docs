@@ -111,7 +111,7 @@ body,#__layout
   transition all .3s cubic-bezier(.55,0,.1,1)
 
 .page-enter-active, .page-leave-active
-  transition opacity .3s
+  transition opacity .2s
 
 .page-enter, .page-leave-active
   opacity 0
