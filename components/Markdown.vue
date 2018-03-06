@@ -50,8 +50,10 @@ export default {
         const elements = document.querySelectorAll(selector)
         elements.forEach(element => {
           const component = new Vue({
-            ...componentMap[selector]
+            ...componentMap[selector],
+            $store: this.$store
           })
+          component.$store = this.$store
           component.$mount(element)
         })
       })
