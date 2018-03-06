@@ -4,6 +4,9 @@
 <script>
 import Marked from 'marked'
 import HighlightJs from 'highlight.js'
+import Clicker from './Clicker.vue'
+import Vue from 'vue'
+
 export default {
   computed: {
     content () {
@@ -27,6 +30,14 @@ export default {
         {rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css'}
       ]
     }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      const clicker = new Vue({
+        ...Clicker
+      })
+      clicker.$mount('.clicker')
+    })
   }
 }
 </script>

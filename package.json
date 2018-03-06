@@ -14,6 +14,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@mapbox/jsxtreme-markdown": "^0.7.3",
     "@nuxtjs/apollo": "^3.0.2",
     "@nuxtjs/bulma": "^1.1.0",
     "@nuxtjs/font-awesome": "^1.0.3",
@@ -26,11 +27,9 @@
     "graphql-tag": "^2.7.3",
     "highlight.js": "^9.12.0",
     "marked": "^0.3.12",
-    "marksy": "^6.0.3",
     "node-fetch": "^2.0.0",
     "normalize.css": "^8.0.0",
-    "nuxt": "^1.0.0",
-    "vue-markdown": "^2.2.4"
+    "nuxt": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
