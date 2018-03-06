@@ -6,6 +6,14 @@ import Marked from 'marked'
 import HighlightJs from 'highlight.js'
 import Clicker from './Clicker.vue'
 import Vue from 'vue'
+const componentSelectors = [
+  'graphiql',
+  'box'
+]
+const componentMap = {
+  graphiql: Clicker,
+  box: Clicker
+}
 
 export default {
   computed: {
@@ -33,11 +41,21 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      const clicker = new Vue({
-        ...Clicker
-      })
-      clicker.$mount('.clicker')
+      this.bootstrap()
     })
+  },
+  methods: {
+    bootstrap () {
+      componentSelectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector)
+        elements.forEach(element => {
+          const component = new Vue({
+            ...componentMap[selector]
+          })
+          component.$mount(element)
+        })
+      })
+    }
   }
 }
 </script>
