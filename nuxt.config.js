@@ -1,8 +1,18 @@
 const env = process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+const stage = process.env.APP_STAGE || 'local'
+const getEnvVar = ({production, staging, local}) => {
+  return stage === 'production'
+    ? production
+      : stage === 'staging'
+        ? staging
+        : local
+}
+
 
 if (env === 'development') {
   require('dotenv').config()
 }
+
 const getRoutes = require('./getRoutes')
 module.exports = {
   router: {
@@ -26,8 +36,23 @@ module.exports = {
     }
   },
   env: {
+    local: stage === 'local',
+    staging: stage === 'staging',
+    production: stage === 'production',
+    APP_STAGE: stage,
     TIPE_API_KEY: process.env.TIPE_API_KEY,
-    TIPE_ID: process.env.TIPE_ID
+    TIPE_ID: process.env.TIPE_ID,
+    SEGMENT_KEY: process.env.SEGMENT_KEY,
+    API_URL: process.env.API_URL || getEnvVar({
+      production: 'https://api.tipe.io',
+      staging: 'https://staging.api.tipe.io',
+      local: 'http://localhost:4500'
+    }),
+    COOKIE_NAME: process.env.COOKIE_NAME || getEnvVar({
+      production: 'tipe-accessToken',
+      staging: 'staging-tipe-accessToken',
+      local: 'local-tipe-accessToken'
+    })
   },
   head: {
     title: 'nuxt-tipe-starter',
@@ -55,6 +80,9 @@ module.exports = {
   /*
   ** Build configuration
   */
+  plugins: [
+    { src: '~plugins/analytics.js', ssr: false }
+  ],
   build: {
     postcss: {
       plugins: {
