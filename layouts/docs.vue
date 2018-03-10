@@ -17,11 +17,11 @@
         </div>
       </div>
     </nav>
-    <div class="columns">
-      <div class="column is-narrow">
-        <Sidebar class="is-hidden-mobile" :docs="docs" />
-      </div>
-      <div class="column is-9">
+    <div class="nav-panel">
+      <Sidebar class="is-hidden-mobile" :docs="docs" />
+    </div>
+    <div class="columns docs-panel">
+      <div class="column is-12 is-narrow">
         <nuxt />
       </div>
     </div>
@@ -152,4 +152,12 @@ nav
   padding-left sidebar-width
   +mq(mobile)
     padding-left 0px
+.nav-panel
+  width sidebar-width
+  position fixed
+  left 0
+.docs-panel
+  margin-left sidebar-width
+  +mq(mobile)
+    margin-left 0px
 </style>
