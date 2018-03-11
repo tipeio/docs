@@ -17,11 +17,11 @@
         </div>
       </div>
     </nav>
-    <div class="columns">
-      <div class="column is-narrow">
-        <Sidebar class="is-hidden-mobile" :docs="docs" />
-      </div>
-      <div class="column is-9">
+    <div class="nav-panel">
+      <Sidebar class="is-hidden-mobile" :docs="docs" />
+    </div>
+    <div class="columns docs-panel">
+      <div class="column is-12 is-narrow">
         <nuxt />
       </div>
     </div>
@@ -31,6 +31,7 @@
 <script>
 import Sidebar from '~/components/Sidebar.vue'
 import DocsQuery from '~/apollo/query/docs.graphql'
+import { mapActions } from 'vuex'
 
 export default {
   components: {
@@ -39,9 +40,18 @@ export default {
   computed: {
     docs () {
       return this.$store.state.docsFolder
+    },
+    user () {
+      return this.$store.state.user
     }
   },
+  created () {
+    this.getUser()
+  },
   methods: {
+    ...mapActions({
+      getUser: 'getUser'
+    }),
     saveToStore (docs) {
       const state = this.groupByPaths(docs.folders)
       this.$store.commit('docs/addDocs', state)
@@ -60,23 +70,7 @@ export default {
         return _state
       }, state)
     }
-  },
-  // apollo: {
-  //   docs: {
-  //     query: DocsQuery,
-  //     prefetch: true,
-  //     manual: true,
-  //     variables: {
-  //       id: '5a9b7bb201dd4300134cd6dd'
-  //     },
-  //     result ({data, loading}) {
-  //       if (!loading) {
-  //         this.docs = data.docs
-  //         this.saveToStore(data.docs)
-  //       }
-  //     }
-  //   }
-  // },
+  }
 }
 </script>
 <style lang="stylus">
@@ -158,4 +152,12 @@ nav
   padding-left sidebar-width
   +mq(mobile)
     padding-left 0px
+.nav-panel
+  width sidebar-width
+  position fixed
+  left 0
+.docs-panel
+  margin-left sidebar-width
+  +mq(mobile)
+    margin-left 0px
 </style>

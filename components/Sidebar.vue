@@ -20,60 +20,6 @@
         </li>
       </ul>
     </div>
-    <!-- <p class="menu-label is-hidden-touch">Concepts</p>
-    <ul class="menu-list">
-      <li><a>Text in your apps</a></li>
-      <li>
-        <a class="is-active">Documents</a>
-        <ul>
-          <li><a>Blocks</a></li>
-          <li><a>Publishing</a></li>
-        </ul>
-      </li>
-      <li><a>Templates</a></li>
-      <li><a>Folders</a></li>
-    </ul>
-
-    <p class="menu-label is-hidden-touch">Getting Started</p>
-    <ul class="menu-list">
-      <li><a>Text planning</a></li>
-      <li><a>Creating a Document</a></li>
-      <li><a>Getting text into your App</a></li>
-      <li><a>Organizing your Documents</a></li>
-    </ul>
-
-    <p class="menu-label is-hidden-touch">Guides</p>
-    <ul class="menu-list">
-      <li><a>Vue</a></li>
-      <li><a>React</a></li>
-      <li><a>Angular</a></li>
-      <li><a>JavaScript</a></li>
-      <li><a>Node js</a></li>
-      <li><a>Android</a></li>
-      <li><a>iOS</a></li>
-      <li><a>Python</a></li>
-      <li><a>PHP</a></li>
-    </ul>
-
-    <p class="menu-label is-hidden-touch">API Reference</p>
-    <ul class="menu-list">
-      <li><a>Authentication</a></li>
-      <li>
-        <a>REST</a>
-        <ul>
-          <li><a>Documents</a></li>
-          <li><a>Folders</a></li>
-        </ul>
-      </li>
-      <li>
-        <a>GraphQL</a>
-        <ul>
-          <li><a>Documents</a></li>
-          <li><a>Folders</a></li>
-        </ul>
-      </li>
-      <li><a>Assets</a></li>
-    </ul> -->
   </aside>
 </template>
 

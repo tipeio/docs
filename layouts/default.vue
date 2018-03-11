@@ -27,7 +27,19 @@
     </footer>
   </div>
 </template>
-
+<script>
+  import { mapActions } from 'vuex'
+  export default {
+    methods: {
+      ...mapActions({
+        getUser: 'getUser'
+      })
+    },
+    created () {
+      this.getUser()
+    }
+  }
+</script>
 <style lang="stylus">
 @require '~assets/theme/colors.styl'
 @require '~assets/theme/util.styl'
