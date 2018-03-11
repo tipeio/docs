@@ -10,6 +10,7 @@ query Docs($id: ID!) {
        _meta {
           id
           name
+          updatedAt
         }
         ... on DocPage {
           navName
@@ -24,6 +25,7 @@ query Docs($id: ID!) {
           _meta {
             id
             name
+            updatedAt
           }
           ... on DocPage {
             navName
@@ -36,6 +38,7 @@ query Docs($id: ID!) {
     documents {
       _meta {
         id
+        updatedAt
       }
     }
   }
