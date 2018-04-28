@@ -18,6 +18,7 @@
       </div>
     </section>
 
+    <!--
     <section class="section">
       <div class="container">
         <div class="header content">
@@ -31,6 +32,7 @@
         </div>
       </div>
     </section>
+    -->
   </div>
 </template>
 <script>
@@ -47,13 +49,13 @@ export default {
   },
   computed: {
     sections () {
-      return this.home._meta
+      return this.home._meta && this.home._meta.published
         ? [
             this.home.concepts,
             this.home.apiRef,
             this.home.guides,
             this.home.faq
-        ] : []
+        ].filter(doc => doc._meta.published) : []
     }
   },
   data () {

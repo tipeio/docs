@@ -1,11 +1,11 @@
 <template>
   <aside class="sidebar">
-    <div v-for="folder of docs.folders" :key="folder.name">
+    <div v-for="folder of formatMenu(docs.folders)" :key="folder.name">
       <p class="menu-label is-hidden-touch menu-section has-text-weight-bold has-text-black-bis">
         {{ folder.name }}
       </p>
       <ul class="menu-list" v-if="folder.documents.length">
-        <li v-for="document of folder.documents" :key="document._meta.id">
+        <li v-for="document of formatDocs(folder.documents)" :key="document._meta.id">
           <nuxt-link :to="{path: '/documentation/' + folderName(folder) + document.path}">
             {{ document.navName }}
           </nuxt-link>
@@ -40,17 +40,41 @@ export default {
     },
     getDocs (folders, document) {
       const matchedFolder = folders.find(folder => folder.name.trim().toLowerCase() === document._meta.name.trim().toLowerCase())
-      if (!matchedFolder) {
-        return []
-      } else {
-        return matchedFolder.documents || []
+      let docs = []
+      if (matchedFolder && Array.isArray(matchedFolder.documents)) {
+        docs = matchedFolder.documents.filter(_doc => _doc._meta.published)
       }
+      return docs
+    },
+    formatMenu (folders) {
+      return folders
+        .slice()
+        .sort((a, b) => {
+          const order = [
+            'getting started',
+            'concepts',
+            'api reference',
+            'guides'
+          ]
+          const left = order.indexOf(a.name) < order.indexOf(b.name)
+          if (left) {
+            return -1
+          } else if (!left) {
+            return 1
+          }
+          return 0
+        })
+    },
+    formatDocs (docs) {
+      return docs.filter(_doc => _doc._meta.published)
     }
   },
   mounted () {
     if (process.client) {
       const activeLink = window.document.querySelector('.is-active-link-exact')
-      activeLink.scrollIntoView(false)
+      if (activeLink) {
+        activeLink.scrollIntoView(false)
+      }
     }
   }
 }
