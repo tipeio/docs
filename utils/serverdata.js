@@ -3,6 +3,7 @@ const folderQuery = `
 query Docs($id: ID!) {
   root: Folder(id: $id) {
     id
+    name
     folders {
       name
       id
@@ -11,6 +12,7 @@ query Docs($id: ID!) {
           id
           name
           updatedAt
+          published
         }
         ... on DocPage {
           navName
@@ -26,6 +28,7 @@ query Docs($id: ID!) {
             id
             name
             updatedAt
+            published
           }
           ... on DocPage {
             navName
@@ -39,6 +42,7 @@ query Docs($id: ID!) {
       _meta {
         id
         updatedAt
+        published
       }
     }
   }

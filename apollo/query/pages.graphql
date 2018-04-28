@@ -5,6 +5,7 @@ query Pages {
     _meta {
       id
       name
+      published
     }
   }
   tweets: allTweetExamples {

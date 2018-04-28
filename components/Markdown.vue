@@ -9,8 +9,8 @@ import Vue from 'vue'
 const renderer = new Marked.Renderer()
 
 renderer.code = function(code, lang) {
-  console.log(code)
-  console.log(lang)
+  // console.log(code)
+  // console.log(lang)
   return `
     <div class="code-sample">
       <div class="lang-name">

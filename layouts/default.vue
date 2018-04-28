@@ -10,9 +10,10 @@
         <div class="navbar-menu">
           <div class="navbar-start">
             <nuxt-link to="/documentation/concepts" class="navbar-item">Tipe Concepts</nuxt-link>
-            <nuxt-link to="/documentation/guides" class="navbar-item">Guides</nuxt-link>
+            <nuxt-link to="/documentation/getting-started" class="navbar-item">Getting Started</nuxt-link>
             <nuxt-link to="/documentation/api-reference" class="navbar-item">API Reference</nuxt-link>
-            <nuxt-link to="/documentation/faq" class="navbar-item">FAQ</nuxt-link>
+            <nuxt-link to="/documentation/guides" class="navbar-item">Guides</nuxt-link>
+            <nuxt-link to="/documentation/getting-started/faqs" class="navbar-item">FAQ</nuxt-link>
           </div>
         </div>
       </div>
