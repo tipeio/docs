@@ -1,23 +1,6 @@
 <template>
   <div class="app">
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-      <div class="container">
-        <div class="navbar-brand">
-          <nuxt-link class="navbar-item" to="/">
-            <img src="https://cdn.tipe.io/tipe/tipe-1024x1024.png?w=128">
-          </nuxt-link>
-        </div>
-        <div class="navbar-menu">
-          <div class="navbar-start">
-            <nuxt-link to="/documentation/concepts" class="navbar-item">Tipe Concepts</nuxt-link>
-            <nuxt-link to="/documentation/getting-started" class="navbar-item">Getting Started</nuxt-link>
-            <nuxt-link to="/documentation/api-reference" class="navbar-item">API Reference</nuxt-link>
-            <nuxt-link to="/documentation/guides" class="navbar-item">Guides</nuxt-link>
-            <nuxt-link to="/documentation/getting-started/faqs" class="navbar-item">FAQ</nuxt-link>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <Navbar />
     <div class="nav-panel">
       <Sidebar class="is-hidden-mobile" :docs="docs" />
     </div>
@@ -31,11 +14,13 @@
 
 <script>
 import Sidebar from '~/components/Sidebar.vue'
+import Navbar from '~/components/Navbar.vue'
 import DocsQuery from '~/apollo/query/docs.graphql'
 import { mapActions } from 'vuex'
 
 export default {
   components: {
+    Navbar,
     Sidebar
   },
   computed: {

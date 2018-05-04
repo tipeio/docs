@@ -1,28 +1,11 @@
 <template>
   <div class="app">
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-      <div class="container">
-        <div class="navbar-brand">
-          <nuxt-link class="navbar-item" to="/">
-            <img src="https://cdn.tipe.io/tipe/tipe-1024x1024.png?w=128">
-          </nuxt-link>
-        </div>
-        <div class="navbar-menu">
-          <div class="navbar-start">
-            <nuxt-link to="/documentation/concepts" class="navbar-item">Tipe Concepts</nuxt-link>
-            <nuxt-link to="/documentation/getting-started" class="navbar-item">Getting Started</nuxt-link>
-            <nuxt-link to="/documentation/api-reference" class="navbar-item">API Reference</nuxt-link>
-            <nuxt-link to="/documentation/guides" class="navbar-item">Guides</nuxt-link>
-            <nuxt-link to="/documentation/getting-started/faqs" class="navbar-item">FAQ</nuxt-link>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <Navbar />
     <nuxt/>
     <footer class="footer">
       <div class="container">
         <div class="content">
-          hello
+          Copyright © Tipe inc 2017-2018. All rights reserved
         </div>
       </div>
     </footer>
@@ -30,7 +13,11 @@
 </template>
 <script>
   import { mapActions } from 'vuex'
+  import Navbar from '~/components/Navbar.vue'
   export default {
+    components: {
+      Navbar
+    },
     methods: {
       ...mapActions({
         getUser: 'getUser'
@@ -104,17 +91,9 @@ body,#__layout
     padding-left 220px
     padding-right 220px
 
-nav
-.navbar
-  // box-shadow 0 3px 5px rgba(57, 63, 72, 0.3)
-  background-image linear-gradient(73deg, color-primary, color-light)
-
-  .navbar-item
-    color white
-    &:hover
-      background-color initial
-      color white
 .footer
+  color white
+  padding 1rem
   background-image linear-gradient(73deg, color-primary-grey, color-primary-grey-light)
 
 </style>
