@@ -8,7 +8,7 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-start">
-          <a target="_blank" href="https://join.slack.com/t/tipe-community/shared_invite/enQtMzU4Njc5ODYzMjAzLTQzMmIzZjg4OTQwNzc0ZTZkNzhhMTZkYjNkOThiNDNlMjI2MmVjMDk0NGYzODY3ZDAzYTVmZWFkYzdiMTBjNDM" class="navbar-item">Tipe Community Chat</a>
+          <a target="_blank" href="https://chat.tipe.io/" class="navbar-item">Tipe Community Chat</a>
           <a target="_blank" href="https://portal.productboard.com/x5utguxz8tm6ibnj9o2fdfpn" class="navbar-item">Feature Roadmap</a>
           <a target="_blank" href="https://status.tipe.io/" class="navbar-item">Status Page</a>
           <a target="_blank" href="https://twitter.com/tipeio" class="navbar-item">Twitter</a>
