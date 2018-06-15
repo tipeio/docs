@@ -43,7 +43,7 @@ query Docs($id: ID!) {
 `
 
 const groupByPaths = (folders, state = {}, names = []) => {
-  return folders.reduce((_state, folder) => {
+  const result = folders.reduce((_state, folder) => {
     const name = [...names, folder.name.split(' ').join('-').toLowerCase()].join('/')
     const documents = [...folder.documents]
       .forEach(document => {
@@ -55,6 +55,7 @@ const groupByPaths = (folders, state = {}, names = []) => {
     }
     return _state
   }, state)
+  return result
 }
 
 const formatRoutes = (resp) => {

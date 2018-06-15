@@ -24,15 +24,21 @@ module.exports = {
   ** Headers of the page
   */
   generate: {
-    routes () {
-      return getRoutes()
-        .then(data => {
-          return Object.keys(data)
-            .map(route => ({
-              route: '/documentation/' + route,
-              payload: data[route]
-            }))
-        })
+    async routes () {
+      const data = await getRoutes()
+      const routes = Object.keys(data)
+        .map(route => ({
+          route: '/documentation/' + route,
+          payload: data[route]
+        }))
+      return [
+        ...routes,
+        // fix index pages
+        { route: '/documentation/concepts' },
+        { route: '/documentation/api-reference' },
+        { route: '/documentation/getting-started' },
+        { route: '/documentation/guides' }
+      ]
     }
   },
   env: {
