@@ -4,7 +4,7 @@
     <div class="nav-panel">
       <Sidebar class="is-hidden-mobile" :docs="docs" />
     </div>
-    <div class="columns docs-panel">
+    <div class="columns main-content docs-panel">
       <div class="column is-12 is-narrow">
         <nuxt />
       </div>
@@ -148,7 +148,9 @@ nav
   width sidebar-width
   position fixed
   left 0
-.docs-panel
+
+// increase class points to ensure margin-left is always higher
+.main-content.docs-panel
   margin-left sidebar-width
   +mq(mobile)
     margin-left 0px
