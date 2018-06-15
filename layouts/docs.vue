@@ -87,8 +87,11 @@ body,#__layout
 #__nuxt,.app
   flex 1
 
-.anchor
-  padding-top 57px
+:target:before
+  content ""
+  display block
+  height 60px /* fixed header height*/
+  margin -60px 0 0 /* negative fixed header height */
 
 .page
   transition all .3s cubic-bezier(.55,0,.1,1)

@@ -10,12 +10,15 @@ const renderer = new Marked.Renderer()
 
 const heading = renderer.heading
 renderer.heading = function(text, level, raw) {
+  if (typeof window === 'undefined') {
+    return heading.call(this, text, level, raw)
+  }
+  const id = this.options.headerPrefix + raw.toLowerCase().replace(/[^\w]+/g, '-')
+  // debugger // eslint-disable-line
   const header = '<h' + level
-  return heading.call(this, text, level, raw).replace(header, header + ' class="anchor" ')
+  return '<a href="' + location.href.replace(/#.*$/, '') + '#' + id + '" class="anchor">' + heading.call(this, text, level, raw) + '</a>'
 }
 renderer.code = function(code, lang) {
-  // console.log(code)
-  // console.log(lang)
   return `
     <div class="code-sample">
       <div class="lang-name">
@@ -65,6 +68,21 @@ export default {
   mounted () {
     this.$nextTick(() => {
       this.bootstrap()
+      if (typeof window !== 'undefined') {
+        const el = document.getElementById(window.location.hash.replace('#', ''))
+        if (el) {
+          window.scroll(0, findPos(el) - 60)
+        }
+      }
+      function findPos(obj) {
+        var curtop = 0;
+        if (obj.offsetParent) {
+          do {
+            curtop += obj.offsetTop
+          } while (obj = obj.offsetParent)
+          return [curtop];
+        }
+      }
     })
   },
   methods: {
