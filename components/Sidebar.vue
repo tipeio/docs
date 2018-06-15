@@ -42,7 +42,8 @@ export default {
       const matchedFolder = folders.find(folder => folder.name.trim().toLowerCase() === document._meta.name.trim().toLowerCase())
       let docs = []
       if (matchedFolder && Array.isArray(matchedFolder.documents)) {
-        docs = matchedFolder.documents.filter(_doc => _doc._meta.published)
+        docs = matchedFolder.documents
+          .filter(_doc => _doc._meta.published)
       }
       return docs
     },
@@ -66,7 +67,24 @@ export default {
         })
     },
     formatDocs (docs) {
-      return docs.filter(_doc => _doc._meta.published)
+      return docs
+        .filter(_doc => _doc._meta.published)
+        .sort((a, b) => {
+          const order = [
+            'Quickstart',
+            'Creating a Document',
+            'Organizing your Documents',
+            'FAQs',
+          ]
+          const left = order.indexOf(a.navName) < order.indexOf(b.navName)
+          if (left) {
+            return -1
+          } else if (!left) {
+            return 1
+          }
+          return 0
+        })
+
     }
   },
   mounted () {
