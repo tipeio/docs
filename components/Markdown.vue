@@ -8,6 +8,11 @@ import Clicker from './Clicker.vue'
 import Vue from 'vue'
 const renderer = new Marked.Renderer()
 
+const heading = renderer.heading
+renderer.heading = function(text, level, raw) {
+  const header = '<h' + level
+  return heading.call(this, text, level, raw).replace(header, header + ' class="anchor" ')
+}
 renderer.code = function(code, lang) {
   // console.log(code)
   // console.log(lang)

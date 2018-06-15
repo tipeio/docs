@@ -87,6 +87,9 @@ body,#__layout
 #__nuxt,.app
   flex 1
 
+.anchor
+  padding-top 57px
+
 .page
   transition all .3s cubic-bezier(.55,0,.1,1)
 
