@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "PORT=3500 nuxt",
+    "dev:debug": "PORT=3500 node --inspect-brk node_modules/.bin/nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "NODE_ENV=production rm -rf dist && nuxt generate",

@@ -5,6 +5,7 @@
 import Marked from 'marked'
 import HighlightJs from 'highlight.js'
 import Clicker from './Clicker.vue'
+import Video from './Video.vue'
 import Vue from 'vue'
 const renderer = new Marked.Renderer()
 
@@ -31,13 +32,25 @@ renderer.code = function(code, lang) {
   `
 }
 
+function findPos(obj) {
+  var curtop = 0
+  if (obj.offsetParent) {
+    do {
+      curtop += obj.offsetTop
+    } while (obj = obj.offsetParent)
+    return [curtop]
+  }
+}
+
 const componentSelectors = [
   'graphiql',
-  'box'
+  'box',
+  'tipe-video'
 ]
 const componentMap = {
   graphiql: Clicker,
-  box: Clicker
+  box: Clicker,
+  'tipe-video': Video
 }
 
 export default {
@@ -68,20 +81,10 @@ export default {
   mounted () {
     this.$nextTick(() => {
       this.bootstrap()
-      if (typeof window !== 'undefined') {
-        const el = document.getElementById(window.location.hash.replace('#', ''))
-        if (el) {
-          window.scroll(0, findPos(el) - 60)
-        }
-      }
-      function findPos(obj) {
-        var curtop = 0;
-        if (obj.offsetParent) {
-          do {
-            curtop += obj.offsetTop
-          } while (obj = obj.offsetParent)
-          return [curtop];
-        }
+      // auto scroll
+      const el = document.getElementById(window.location.hash.replace('#', ''))
+      if (el) {
+        window.scroll(0, findPos(el) - 60)
       }
     })
   },
@@ -90,9 +93,34 @@ export default {
       componentSelectors.forEach(selector => {
         const elements = document.querySelectorAll(selector)
         elements.forEach(element => {
+          // convert attrs to props with the correct type
+          const vu = componentMap[selector]
+          if (!vu) {
+            // mismatch of component selector and component map
+            return
+          }
+          const _props = Object.keys(vu.props).reduce((memo, prop) => {
+            const attr = element.getAttribute(prop)
+            if (attr !== null) {
+              const construct = vu.props[prop].type ? vu.props[prop].type : vu.props[prop]
+              memo[prop] = construct(element.getAttribute(prop))
+            }
+            if (vu.props[prop].default) {
+              if (typeof vu.props[prop].default === 'function') {
+                memo[prop] = memo[prop] || vu.props[prop].default()
+              } else {
+                memo[prop] = memo[prop] || vu.props[prop].default
+              }
+            }
+            return memo
+          }, {})
           const component = new Vue({
             ...componentMap[selector],
-            $store: this.$store
+            $store: this.$store,
+            created() {
+              const vm = this
+              Object.assign(vm, _props)
+            }
           })
           component.$store = this.$store
           component.$mount(element)
