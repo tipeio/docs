@@ -11,7 +11,7 @@
           </nuxt-link>
 
           <ul v-if="getDocs(folder.folders, document).length">
-            <li v-for="subdoc of getDocs(folder.folders, document)" :key="subdoc._meta.id">
+            <li v-for="subdoc of formatSubDocs(getDocs(folder.folders, document))" :key="subdoc._meta.id">
               <nuxt-link :to="{path: '/documentation/' + folderName(folder) + document.path + subdoc.path}">
                 {{ subdoc.navName }}
               </nuxt-link>
@@ -73,18 +73,17 @@ export default {
         .sort((a, b) => {
           const order = [
             'Quickstart',
-
-            'Adding Members',
-            'Roles',
-
-            'Creating a Document',
-            'Publishing',
-            'Blocks',
-            'Using Blocks',
             'Organizing your Documents',
 
             'FAQs',
-            'Request a feature'
+            'Request a feature',
+
+            'JavaScript',
+            'Ruby',
+            'Python',
+            'PHP',
+            'Swift',
+            'Android'
           ]
           const left = order.indexOf(a.navName) < order.indexOf(b.navName)
           if (left) {
@@ -95,6 +94,30 @@ export default {
           return 0
         })
 
+    },
+    formatSubDocs (docs) {
+      return docs
+        .slice()
+        .sort((a, b) => {
+          const order = [
+
+            'Adding Members',
+            'Roles',
+
+            'Creating a Document',
+            'Publishing',
+            'Blocks',
+            'Using Blocks',
+            'Organizing your Documents'
+          ]
+          const left = order.indexOf(a.navName) < order.indexOf(b.navName)
+          if (left) {
+            return -1
+          } else if (!left) {
+            return 1
+          }
+          return 0
+        })
     }
   },
   mounted () {
