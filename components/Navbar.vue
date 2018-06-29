@@ -13,7 +13,7 @@
           <a target="_blank" href="https://status.tipe.io/" class="navbar-item">Status Page</a>
           <a target="_blank" href="https://twitter.com/tipeio" class="navbar-item">Twitter</a>
           <a target="_blank" href="https://github.com/tipeio" class="navbar-item">Github</a>
-          <nuxt-link to="/documentation/getting-started/faqs" class="navbar-item">FAQ</nuxt-link>
+          <nuxt-link to="/documentation/engage/faqs" class="navbar-item">FAQ</nuxt-link>
         </div>
         <div class="navbar-end">
           <a target="_blank" href="https://tipe.io/signup" class="navbar-item">Sign Up</a>
