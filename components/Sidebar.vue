@@ -55,7 +55,8 @@ export default {
             'getting started',
             'concepts',
             'api reference',
-            'guides'
+            'guides',
+            'engage'
           ]
           const left = order.indexOf(a.name) < order.indexOf(b.name)
           if (left) {
