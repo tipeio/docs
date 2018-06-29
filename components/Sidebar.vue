@@ -54,8 +54,8 @@ export default {
           const order = [
             'getting started',
             'concepts',
-            'api reference',
             'guides',
+            'api reference',
             'engage'
           ]
           const left = order.indexOf(a.name) < order.indexOf(b.name)
@@ -73,9 +73,18 @@ export default {
         .sort((a, b) => {
           const order = [
             'Quickstart',
+
+            'Adding Members',
+            'Roles',
+
             'Creating a Document',
+            'Publishing',
+            'Blocks',
+            'Using Blocks',
             'Organizing your Documents',
+
             'FAQs',
+            'Request a feature'
           ]
           const left = order.indexOf(a.navName) < order.indexOf(b.navName)
           if (left) {
