@@ -87,6 +87,27 @@ body,#__layout
 #__nuxt,.app
   flex 1
 
+blockquote.warning
+  background-color #fdf7f7
+  border-color #d9534f
+
+blockquote.tip
+  background-color #f4f8fa
+  border-color #5bc0de
+
+blockquote.consider
+  background-color #fcf8f2
+  border-color #f0ad4e
+
+blockquote.note
+  background-color #f3f8f3
+  border-color #50af51
+
+blockquote.aside
+  background-color #f3f8f3
+  border-color #50af51
+
+
 :target:before
   content ""
   display block

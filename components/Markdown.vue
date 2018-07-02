@@ -32,6 +32,21 @@ renderer.code = function(code, lang) {
   `
 }
 
+/*
+note/aside - green
+consider - yellow
+tip  - blue
+warning - red
+*/
+const getQuoteType = /(^<p>(warning|consider|tip|note|aside): )(.+)/
+renderer.blockquote = function(quote) {
+  if (getQuoteType.test(quote)) {
+    const content = getQuoteType.exec(quote)
+    return '<blockquote class="' + content[2] + '">\n' + content[3] + '</blockquote>\n'
+  }
+  return '<blockquote>\n' + quote + '</blockquote>\n'
+}
+
 function findPos(obj) {
   var curtop = 0
   if (obj.offsetParent) {
