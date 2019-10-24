@@ -28,12 +28,12 @@ body {
   }
 
   &.bright {
-    background: $backgroundBright;
+    background: $sidebarBright;
     color: $textBright;
   }
 
   &.dark {
-    background: $backgroundDark;
+    background: $sidebarDark;
     color: $textDark;
   }
 }

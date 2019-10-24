@@ -40,7 +40,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 2px;
+    border-radius: 6px;
     border: solid 1px;
     transition: border .15s ease-in-out;
   }
@@ -54,10 +54,10 @@
   }
 
   .dark .next {
-    border-color: $sidebarDark;
+    border-color: $sidebarBright;
   }
 
   .bright .next {
-    border-color: $sidebarBright;
+    border-color: $sidebarDark;
   }
 </style>

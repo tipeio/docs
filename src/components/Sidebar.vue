@@ -5,11 +5,11 @@
           <li class="section" v-for="{ node } in $static.menu.edges" :key="node.id">
             <h3 class="section-title">{{node.section}}</h3>
             <ul>
-              <li v-for="item in node.topics" :key="item.title">
-                <g-link class="topic" :to="'/' + item.slug">{{item.title}}</g-link>
-                <ul v-if="checkAnchors(node.slug, item.slug)" v-for="{ node } in $static.docs.edges" :key="node.id">
-                  <li v-for="heading in node.headings" :key="heading.value">
-                    <a class="sub-topic" :href="'/' + item.slug + heading.anchor">{{heading.value}}</a>
+              <li v-for="topic in node.topics" :key="topic.title">
+                <g-link class="topic" :to="'/' + topic.slug">{{topic.title}}</g-link>
+                <ul v-if="checkAnchors(node.slug, topic.slug)" v-for="{ node } in $static.docs.edges" :key="node.id">
+                  <li v-for="section in getSections(topic.menuId)" :key="section.id">
+                    <a class="sub-topic" :href="'/' + topic.slug + section.anchor">{{section.value}}</a>
                   </li>
                 </ul>
               </li>
@@ -29,6 +29,7 @@ query Menu {
         topics {
           title
           slug
+          menuId
         }
       }
     }
@@ -37,9 +38,17 @@ query Menu {
     edges {
       node {
         slug
-        headings(depth: h2) {
-          value
+      }
+    }
+  }
+  sections: allSection(sortBy: "order", order:ASC) {
+    edges {
+      node {
+        id
+        parent
+        headings(depth:h2) {
           anchor
+          value
         }
       }
     }
@@ -74,6 +83,14 @@ export default {
       if (slug == item) {
         return true
       }
+    },
+    getSections(menuId) {
+      return this.$static.sections.edges.filter(edge => {
+        return edge.node.parent === menuId
+      }).map(edge => ({
+        anchor: edge.node.headings[0].anchor,
+        value: edge.node.headings[0].value
+      }))
     },
     stateFromSize: function() {
       if (window.getComputedStyle(document.body, ':before').content == '"small"') {

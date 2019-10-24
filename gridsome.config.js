@@ -18,40 +18,26 @@ function addStyleResource (rule) {
 module.exports = {
   siteName: 'Tipe Docs',
   siteUrl: 'https://tipe.io/docs',
-  // templates: {
-  //   Doc: '/:slug',
-  // },
   plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Section',
+        path: './src/sections/**/*.md'
+      }
+    },
     {
       use: '@gridsome/vue-remark',
       options: {
         typeName: 'Doc', // Required
-        baseDir: './docs', // Where .md files are located
+        baseDir: './docs/pages', // Where .md files are located
         template: './src/templates/Doc.vue', // Optional,
+        includePaths: ['./src/sections'],
         plugins: [
           '@gridsome/remark-prismjs',
         ]
       }
     },
-    // {
-    //   use: '@gridsome/source-filesystem',
-    //   options: {
-    //     path: 'docs/**/*.md',
-    //     typeName: 'Doc',
-    //     remark: {
-    //       plugins: [
-    //         '@gridsome/remark-prismjs',
-    //         '@gridsome/vue-remark'
-    //       ]
-    //     }
-    //   }
-    // },
-    // {
-    //   use: '@gridsome/plugin-google-analytics',
-    //   options: {
-    //     id: (process.env.GA_ID ? process.env.GA_ID : 'XX-999999999-9')
-    //   }
-    // },
     {
       use: '@gridsome/plugin-sitemap',
       options: {

@@ -5,6 +5,7 @@
       "topics": [
         {
           "title": "Getting started",
+          "menuId": "gettingStarted",
           "slug": "introduction/getting-started"
         }
       ]
@@ -14,30 +15,37 @@
       "topics": [
         {
           "title": "Gatsby",
+          "menuId": "gatsby",
           "slug": "guides-gatsby"
         },
         {
           "title": "React",
+          "menuId": "react",
           "slug": "guides-gatsby"
         },
         {
           "title": "Vue",
+          "menuId": "vue",
           "slug": "guides-gatsby"
         },
         {
           "title": "Angular",
+          "menuId": "angular",
           "slug": "guides-gatsby"
         },
         {
           "title": "Nuxt",
+          "menuId": "nuxt",
           "slug": "guides-gatsby"
         },
         {
           "title": "Next.js",
+          "menuId": "next",
           "slug": "guides-gatsby"
         },
         {
           "title": "Gridsome",
+          "menuId": "gridsome",
           "slug": "guides-gatsby"
         }
       ]
@@ -47,22 +55,27 @@
       "topics": [
         {
           "title": "JavaScript",
+          "menuId": "sdkJs",
           "slug": "sdk-javascript"
         },
         {
           "title": "Vue",
+          "menuId": "sdkVue",
           "slug": "sdk-javascript"
         },
         {
           "title": "React",
+          "menuId": "sdkReact",
           "slug": "sdk-javascript"
         },
         {
           "title": "Angular",
+          "menuId": "sdkAngular",
           "slug": "sdk-javascript"
         },
         {
           "title": "Golang",
+          "menuId": "sdkGolang",
           "slug": "sdk-golang"
         }
       ]
@@ -72,10 +85,12 @@
       "topics": [
         {
           "title": "Templates",
+          "menuId": "templates",
           "slug": "references-templates"
         },
         {
           "title": "API",
+          "menuId": "api",
           "slug": "references-templates"
         }
       ]
@@ -85,26 +100,32 @@
       "topics": [
         {
           "title": "React",
+          "menuId": "startersReact",
           "slug": "starters-gatsby"
         },
         {
           "title": "Vue",
+          "menuId": "startersVue",
           "slug": "starters-gatsby"
         },
         {
           "title": "Angular",
+          "menuId": "startersAngular",
           "slug": "starters-gatsby"
         },
         {
           "title": "Gatsby",
+          "menuId": "startersGatsby",
           "slug": "starters-gatsby"
         },
         {
           "title": "Next.js",
+          "menuId": "startersNext",
           "slug": "starters-gatsby"
         },
         {
           "title": "Nuxt",
+          "menuId": "startersNuxt",
           "slug": "starters-gatsby"
         }
       ]
@@ -114,6 +135,7 @@
       "topics": [
         {
           "title": "Theme configuration",
+          "menuId": "community",
           "slug": "theme-configuration"
         }
       ]
