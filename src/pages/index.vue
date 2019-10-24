@@ -7,32 +7,27 @@
           <Shortcut link="/introduction/getting-started" text="Getting Started" icon="play-icon" />
         </div>
         <div class="col">
-          <Shortcut link="/theme-configuration" text="Guides" icon="navigation-icon" />
+          <Shortcut link="/guides/gatsby" text="Guides" icon="navigation-icon" />
         </div>
         <div class="col">
-          <Shortcut link="/theme-configuration" text="SDKS" icon="terminal-icon" />
+          <Shortcut link="/sdks/javascript" text="SDKS" icon="terminal-icon" />
         </div>
         <div class="col">
           <Shortcut
-            link="/theme-configuration#changing-colors"
+            link="/reference/api"
             text="API Reference"
             icon="globe-icon"
           />
         </div>
         <div class="col">
           <Shortcut
-            link="/theme-configuration#changing-colors"
+            link="/starters/react"
             text="Starter Repos"
             icon="code-icon"
           />
         </div>
-        <div class="col">
-          <Shortcut
-            link="/theme-configuration#changing-colors"
-            text="Built with Tipe"
-            icon="zap-icon"
-          />
-        </div>
+        
+        
       </nav>
     </div>
   </Layout>
