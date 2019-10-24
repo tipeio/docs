@@ -56,7 +56,7 @@ export default {
   height: 100%;
 
   .dark & {
-    border: 1px solid shade($sidebarDark, 10%);
+    border: 1px solid shade($sidebarDark, 35%);
     background: $backgroundDark;
   }
 }

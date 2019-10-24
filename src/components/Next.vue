@@ -46,11 +46,12 @@
   }
 
   .message {
-    width: 73%;
+    width: 64%;
     font-size: 1.2em;
   }
   .action {
-    width: 24%;
+    width: 32%;
+    text-align: end;
   }
 
   .dark .next {

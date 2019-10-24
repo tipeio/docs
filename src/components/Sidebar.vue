@@ -9,7 +9,7 @@
                 <g-link class="topic" :to="'/' + topic.slug">{{topic.title}}</g-link>
                 <ul v-if="checkAnchors(node.slug, topic.slug)" v-for="{ node } in $static.docs.edges" :key="node.id">
                   <li v-for="section in getSections(topic.menuId)" :key="section.id">
-                    <a class="sub-topic" :href="'/docs/' + topic.slug + section.anchor">{{section.value}}</a>
+                    <g-link class="sub-topic" :to="topic.slug + section.anchor">{{section.value}}</g-link>
                   </li>
                 </ul>
               </li>
@@ -193,15 +193,15 @@ ul {
 
 .section-title {
   text-transform: uppercase;
-  font-size: 12px;
-  margin-bottom: 20px;
+  font-size: .8em;
+  margin-bottom: 1em;
   opacity: .3;
   letter-spacing: .15em;
   font-weight: 700;
 }
 
 .topic {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .sub-topic {
@@ -228,11 +228,5 @@ ul {
       opacity: 1;
     }
   }
-}
-
-.git {
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 </style>

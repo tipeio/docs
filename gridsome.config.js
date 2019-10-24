@@ -15,10 +15,13 @@ function addStyleResource (rule) {
     })
 }
 
+const stage = process.env.GRIDSOME_APP_STAGE = process.env.APP_STAGE = process.env.APP_STAGE || 'local'
+const prefix = process.env.GRIDSOME_SITE_PREFIX = process.env.SITE_PREFIX = /prod/.test(stage) ? '/docs' : '' 
+
 module.exports = {
   siteName: 'Tipe Docs',
   siteUrl: 'https://tipe.io/docs',
-  pathPrefix: '/docs',
+  pathPrefix: prefix,
   plugins: [
     {
       use: '@gridsome/source-filesystem',

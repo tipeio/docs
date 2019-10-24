@@ -39,8 +39,10 @@ export default {
     this.$store.commit('closeSidebar')
     if (process.isClient) {
       if('serviceWorker' in navigator) {
+        const url = process.env.GRIDSOME_SITE_PREFIX + '/sw.js'
+
         navigator.serviceWorker
-          .register('/docs/sw.js')
+          .register(url)
           .then(function() { console.log("Service Worker Registered"); });
       }
     }
