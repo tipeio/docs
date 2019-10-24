@@ -47,16 +47,17 @@ export default {
 <style lang="scss" scoped>
 .shortcut {
   border: 1px solid shade($sidebarBright, 10%);
-  background: $sidebarBright;
+  background: $backgroundBright;
   padding: 2rem;
   border-radius: 3px;
   transition: background 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  box-shadow: rgba(8, 35, 51, 0.05) 0px 3px 6px;
   width: 100%;
   height: 100%;
 
   .dark & {
     border: 1px solid shade($sidebarDark, 10%);
-    background: $sidebarDark;
+    background: $backgroundDark;
   }
 }
 
