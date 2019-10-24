@@ -9,7 +9,7 @@
                 <g-link class="topic" :to="'/' + topic.slug">{{topic.title}}</g-link>
                 <ul v-if="checkAnchors(node.slug, topic.slug)" v-for="{ node } in $static.docs.edges" :key="node.id">
                   <li v-for="section in getSections(topic.menuId)" :key="section.id">
-                    <a class="sub-topic" :href="'/' + topic.slug + section.anchor">{{section.value}}</a>
+                    <a class="sub-topic" :href="'/docs/' + topic.slug + section.anchor">{{section.value}}</a>
                   </li>
                 </ul>
               </li>

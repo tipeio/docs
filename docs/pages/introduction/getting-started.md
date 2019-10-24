@@ -42,4 +42,4 @@ import Production from '~/sections/getting-started/production.md'
 </Block>
 
 
-<Next message="Nice job 🏆. Keep going to learn how to get the best out of templates." to="/references/templates"/>
+<Next message="Nice job 🏆. Keep going to learn how to get the best out of templates." to="/reference/templates"/>
