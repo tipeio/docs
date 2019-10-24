@@ -5,12 +5,112 @@
       "topics": [
         {
           "title": "Getting started",
-          "slug": "getting-started"
+          "slug": "introduction/getting-started"
         }
       ]
     },
     {
-      "section": "Setup",
+      "section": "Guides",
+      "topics": [
+        {
+          "title": "Gatsby",
+          "slug": "guides-gatsby"
+        },
+        {
+          "title": "React",
+          "slug": "guides-gatsby"
+        },
+        {
+          "title": "Vue",
+          "slug": "guides-gatsby"
+        },
+        {
+          "title": "Angular",
+          "slug": "guides-gatsby"
+        },
+        {
+          "title": "Nuxt",
+          "slug": "guides-gatsby"
+        },
+        {
+          "title": "Next.js",
+          "slug": "guides-gatsby"
+        },
+        {
+          "title": "Gridsome",
+          "slug": "guides-gatsby"
+        }
+      ]
+    },
+    {
+      "section": "SDKs",
+      "topics": [
+        {
+          "title": "JavaScript",
+          "slug": "sdk-javascript"
+        },
+        {
+          "title": "Vue",
+          "slug": "sdk-javascript"
+        },
+        {
+          "title": "React",
+          "slug": "sdk-javascript"
+        },
+        {
+          "title": "Angular",
+          "slug": "sdk-javascript"
+        },
+        {
+          "title": "Golang",
+          "slug": "sdk-golang"
+        }
+      ]
+    },
+    {
+      "section": "References",
+      "topics": [
+        {
+          "title": "Templates",
+          "slug": "references-templates"
+        },
+        {
+          "title": "API",
+          "slug": "references-templates"
+        }
+      ]
+    },
+    {
+      "section": "Starters",
+      "topics": [
+        {
+          "title": "React",
+          "slug": "starters-gatsby"
+        },
+        {
+          "title": "Vue",
+          "slug": "starters-gatsby"
+        },
+        {
+          "title": "Angular",
+          "slug": "starters-gatsby"
+        },
+        {
+          "title": "Gatsby",
+          "slug": "starters-gatsby"
+        },
+        {
+          "title": "Next.js",
+          "slug": "starters-gatsby"
+        },
+        {
+          "title": "Nuxt",
+          "slug": "starters-gatsby"
+        }
+      ]
+    },
+    {
+      "section": "Community",
       "topics": [
         {
           "title": "Theme configuration",

@@ -1,10 +1,10 @@
 <template>
-  <Layout :sidebar="false">
+  <Layout :sidebar="false" transparent>
     <div class="content">
       <h1>Tipe Docs</h1>
       <nav>
         <div class="col">
-          <Shortcut link="/getting-started" text="Getting Started" icon="play-icon" />
+          <Shortcut link="/introduction/getting-started" text="Getting Started" icon="play-icon" />
         </div>
         <div class="col">
           <Shortcut link="/theme-configuration" text="Guides" icon="navigation-icon" />

@@ -6,10 +6,12 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: calc(0.2em + 1vw);
 }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
   margin: 0;
   padding: 0;
   line-height: 1.7;
@@ -58,4 +60,9 @@ h1 {
 
 a {
   color: $brandPrimary;
+  text-decoration: none;
+
+  & :visited {
+    text-decoration: none;
+  }
 }

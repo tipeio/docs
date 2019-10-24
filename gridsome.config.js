@@ -16,30 +16,42 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-  siteName: 'Jamdocs',
-  siteUrl: 'https://jamdocs.netlify.com',
-  templates: {
-    Doc: '/:slug',
-  },
+  siteName: 'Tipe Docs',
+  siteUrl: 'https://tipe.io/docs',
+  // templates: {
+  //   Doc: '/:slug',
+  // },
   plugins: [
     {
-      use: '@gridsome/source-filesystem',
+      use: '@gridsome/vue-remark',
       options: {
-        path: 'docs/**/*.md',
-        typeName: 'Doc',
-        remark: {
-          plugins: [
-            '@gridsome/remark-prismjs'
-          ]
-        }
+        typeName: 'Doc', // Required
+        baseDir: './docs', // Where .md files are located
+        template: './src/templates/Doc.vue', // Optional,
+        plugins: [
+          '@gridsome/remark-prismjs',
+        ]
       }
     },
-    {
-      use: '@gridsome/plugin-google-analytics',
-      options: {
-        id: (process.env.GA_ID ? process.env.GA_ID : 'XX-999999999-9')
-      }
-    },
+    // {
+    //   use: '@gridsome/source-filesystem',
+    //   options: {
+    //     path: 'docs/**/*.md',
+    //     typeName: 'Doc',
+    //     remark: {
+    //       plugins: [
+    //         '@gridsome/remark-prismjs',
+    //         '@gridsome/vue-remark'
+    //       ]
+    //     }
+    //   }
+    // },
+    // {
+    //   use: '@gridsome/plugin-google-analytics',
+    //   options: {
+    //     id: (process.env.GA_ID ? process.env.GA_ID : 'XX-999999999-9')
+    //   }
+    // },
     {
       use: '@gridsome/plugin-sitemap',
       options: {
@@ -52,4 +64,3 @@ module.exports = {
     types.forEach(type => addStyleResource(config.module.rule('scss').oneOf(type)))
   }
 }
-

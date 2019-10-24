@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :menuToggle="sidebar" />
+    <Header :menuToggle="sidebar" :transparent="transparent" />
     <Sidebar v-if="sidebar" />
     <main class="main" :class="{'main--no-sidebar': !sidebar, 'main--sidebar-is-open' : this.$store.state.sidebarOpen}">
       <slot/>
@@ -29,6 +29,10 @@ export default {
     sidebar: {
       type: Boolean,
       default: true
+    },
+    transparent: {
+      type: Boolean,
+      default: false
     }
   },
   mounted() {
@@ -47,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .main {
   padding: 100px 30px 30px 30px;
-  max-width: 800px;
+  max-width: 1200px;
   transition: transform .15s ease-in-out;
 
   @include respond-above(sm) {

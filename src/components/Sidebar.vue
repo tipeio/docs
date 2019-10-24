@@ -1,5 +1,5 @@
 <template>
-    <aside class="sidebar" :class="{'sidebar--open' : this.$store.state.sidebarOpen}">
+    <aside class="sidebar" :class="classes">
       <nav>
         <ul>
           <li class="section" v-for="{ node } in $static.menu.edges" :key="node.id">
@@ -16,7 +16,6 @@
             </ul>
           </li>
         </ul>
-        <GitLink class="git" />
       </nav>
     </aside>
 </template>
@@ -38,7 +37,7 @@ query Menu {
     edges {
       node {
         slug
-        headings {
+        headings(depth: h2) {
           value
           anchor
         }
@@ -49,12 +48,21 @@ query Menu {
 </static-query>
 
 <script>
-import GitLink from '~/components/GitLink.vue'
 import throttle from 'lodash/throttle'
 
 export default {
-  components: {
-    GitLink
+  data() {
+    return {
+      logoColor: "bright"
+    }
+  },
+  computed: {
+    classes() {
+      return {
+        'sidebar--open' : this.$store.state.sidebarOpen,
+        [this.logoColor]: Boolean(this.logoColor)
+      }
+    }
   },
   watch: {
     '$route' () {
@@ -87,8 +95,10 @@ export default {
             allCurrent[i].classList.remove('current')
           }
           link.classList.add('current')
+          
         } else {
           link.classList.remove('current')
+          this.logoColor = ''
         }
       })
     }
@@ -174,13 +184,13 @@ ul {
 }
 
 .topic {
-  font-weight: 700;
+  font-size: 1rem;
 }
 
 .sub-topic {
   font-size: .875rem;
   position: relative;
-  opacity: .8;
+  opacity: .7;
 
   &::after {
     content: '';
@@ -209,5 +219,3 @@ ul {
   left: 0;
 }
 </style>
-
-

@@ -3,17 +3,16 @@
     <h1>
       {{ $page.doc.title }}
     </h1>
-     <div class="markdown" v-html="$page.doc.content" />
+     <VueRemarkContent class="markdown"/>
   </Layout>
 </template>
 
 <page-query>
-query Doc ($path: String!) {
-  doc: doc (path: $path) {
+query Doc ($id: ID!) {
+  doc: doc (id: $id) {
     title
     path
     date (format: "D. MMMM YYYY")
-    timeToRead
     content
   }
 }
@@ -39,16 +38,49 @@ export default {
 }
 
 /deep/ > h2 {
-  padding-top: 100px;
-  margin-top: -80px;
+  padding-top: 10px;
+  // margin-top: -80px;
 
   @include respond-above(md) {
     font-size: 2rem;
   }
 }
+.dark .markdown /deep/ blockquote:before {
+  background: $sidebarDark;
+}
+
+.bright .markdown /deep/ blockquote:before {
+  background: $sidebarBright;
+}
+
+/deep/ blockquote {
+  position: relative;
+  font-size: 18px;
+  line-height: 1.6;
+  font-style: italic;
+  position: relative;
+  padding-left: 20px;
+  padding-bottom: 2px;
+  margin: 32px 0px;
+  opacity: .8;
+  font-weight: 100;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    left: 0px;
+    border-radius: 6px;
+  }
+} 
+
+/deep/ strong .language-text {
+  background: $brandPrimary;
+  color: white;
+} 
+
 
 .markdown {
   padding-bottom: 50vh;
 }
 </style>
-
