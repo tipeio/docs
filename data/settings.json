@@ -16,37 +16,37 @@
         {
           "title": "Gatsby",
           "menuId": "gatsby",
-          "slug": "guides-gatsby"
+          "slug": "guides/gatsby"
         },
         {
           "title": "React",
           "menuId": "react",
-          "slug": "guides-gatsby"
+          "slug": "guides/react"
         },
         {
           "title": "Vue",
           "menuId": "vue",
-          "slug": "guides-gatsby"
+          "slug": "guides/vue"
         },
         {
           "title": "Angular",
           "menuId": "angular",
-          "slug": "guides-gatsby"
+          "slug": "guides/angular"
         },
         {
           "title": "Nuxt",
           "menuId": "nuxt",
-          "slug": "guides-gatsby"
+          "slug": "guides/nuxt"
         },
         {
           "title": "Next.js",
           "menuId": "next",
-          "slug": "guides-gatsby"
+          "slug": "guides/next"
         },
         {
           "title": "Gridsome",
           "menuId": "gridsome",
-          "slug": "guides-gatsby"
+          "slug": "guides/gridsome"
         }
       ]
     },
@@ -56,27 +56,27 @@
         {
           "title": "JavaScript",
           "menuId": "sdkJs",
-          "slug": "sdk-javascript"
+          "slug": "sdks/javascript"
         },
         {
           "title": "Vue",
           "menuId": "sdkVue",
-          "slug": "sdk-javascript"
+          "slug": "sdks/vue"
         },
         {
           "title": "React",
           "menuId": "sdkReact",
-          "slug": "sdk-javascript"
+          "slug": "sdks/react"
         },
         {
           "title": "Angular",
           "menuId": "sdkAngular",
-          "slug": "sdk-javascript"
+          "slug": "sdks/angular"
         },
         {
           "title": "Golang",
           "menuId": "sdkGolang",
-          "slug": "sdk-golang"
+          "slug": "sdks/golang"
         }
       ]
     },
@@ -86,12 +86,22 @@
         {
           "title": "Templates",
           "menuId": "templates",
-          "slug": "references-templates"
+          "slug": "reference/templates"
+        },
+        {
+          "title": "CLI",
+          "menuId": "cli",
+          "slug": "reference/cli"
         },
         {
           "title": "API",
           "menuId": "api",
-          "slug": "references-templates"
+          "slug": "reference/api"
+        },
+        {
+          "title": "CDN",
+          "menuId": "cdn",
+          "slug": "reference/cdn"
         }
       ]
     },
@@ -101,42 +111,32 @@
         {
           "title": "React",
           "menuId": "startersReact",
-          "slug": "starters-gatsby"
+          "slug": "starters/react"
         },
         {
           "title": "Vue",
           "menuId": "startersVue",
-          "slug": "starters-gatsby"
+          "slug": "starters/vue"
         },
         {
           "title": "Angular",
           "menuId": "startersAngular",
-          "slug": "starters-gatsby"
+          "slug": "starters/angular"
         },
         {
           "title": "Gatsby",
           "menuId": "startersGatsby",
-          "slug": "starters-gatsby"
+          "slug": "starters/gatsby"
         },
         {
           "title": "Next.js",
           "menuId": "startersNext",
-          "slug": "starters-gatsby"
+          "slug": "starters/next"
         },
         {
           "title": "Nuxt",
           "menuId": "startersNuxt",
-          "slug": "starters-gatsby"
-        }
-      ]
-    },
-    {
-      "section": "Community",
-      "topics": [
-        {
-          "title": "Theme configuration",
-          "menuId": "community",
-          "slug": "theme-configuration"
+          "slug": "starters/nuxt"
         }
       ]
     }
