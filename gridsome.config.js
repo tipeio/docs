@@ -18,6 +18,7 @@ function addStyleResource (rule) {
 module.exports = {
   siteName: 'Tipe Docs',
   siteUrl: 'https://tipe.io/docs',
+  pathPrefix: '/docs',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
