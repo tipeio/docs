@@ -45,12 +45,17 @@ export default {
     font-size: 2rem;
   }
 }
-.dark .markdown /deep/ blockquote:before {
-  background: $sidebarDark;
+.dark .markdown /deep/ blockquote {
+  color: rgba($textDark, .6);
+  &:before {
+    background: $sidebarDark;
+  }
 }
-
-.bright .markdown /deep/ blockquote:before {
-  background: $sidebarBright;
+.bright .markdown /deep/ blockquote {
+  color: rgba($textBright, .6);
+  &:before {
+    background: $sidebarBright;
+  }
 }
 
 /deep/ blockquote {
@@ -62,8 +67,6 @@ export default {
   padding-left: 20px;
   padding-bottom: 2px;
   margin: 32px 0px;
-  opacity: .8;
-  font-weight: 100;
   &:before {
     content: "";
     position: absolute;

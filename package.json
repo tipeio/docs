@@ -12,10 +12,12 @@
     "@gridsome/remark-prismjs": "^0.2.0",
     "@gridsome/source-filesystem": "^0.6.0",
     "@gridsome/transformer-remark": "^0.3.4",
+    "algoliasearch": "^3.35.1",
     "gridsome": "^0.7.0",
-    "gridsome-plugin-algolia": "^2.1.1",
-    "typeface-source-sans-pro": "^0.0.54",
+    "gridsome-plugin-algolia": "^2.1.2",
+    "typeface-lato": "^0.0.75",
     "vue-feather-icons": "^4.22.0",
+    "vue-instantsearch": "^2.6.0",
     "vuex": "^3.1.1"
   },
   "devDependencies": {
