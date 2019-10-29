@@ -7,7 +7,7 @@
             <ul>
               <li v-for="topic in node.topics" :key="topic.title">
                 <g-link class="topic" :to="'/' + topic.slug">{{topic.title}}</g-link>
-                <ul v-if="checkAnchors(node.slug, topic.slug)" v-for="{ node } in $static.docs.edges" :key="node.id">
+                <ul v-if="checkAnchors(node.slug, topic.slug)" v-for="{ node } in $static.docs.edges" :key="node.id" class="header">
                   <li v-for="section in getSections(topic.menuId)" :key="section.id">
                     <g-link class="sub-topic" :to="topic.slug + section.anchor">{{section.value}}</g-link>
                   </li>
@@ -185,6 +185,10 @@ ul {
       color: $brandPrimary;
     }
   }
+}
+
+ul.header {
+  padding-left: .8em;
 }
 
 .section {

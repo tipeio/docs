@@ -15,7 +15,7 @@
     "algoliasearch": "^3.35.1",
     "gridsome": "^0.7.0",
     "gridsome-plugin-algolia": "^2.1.2",
-    "typeface-lato": "^0.0.75",
+    "typeface-source-sans-pro": "^0.0.75",
     "vue-feather-icons": "^4.22.0",
     "vue-instantsearch": "^2.6.0",
     "vuex": "^3.1.1"

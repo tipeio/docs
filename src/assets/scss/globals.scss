@@ -7,10 +7,14 @@
 html {
   scroll-behavior: smooth;
   font-size: calc(0.6em + 1vw);
+
+  @include respond-above(sm) {
+    font-size: 16px;
+  }
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
   margin: 0;
   padding: 0;
@@ -46,16 +50,13 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1.2;
 }
 
 h1 {
   margin-top: 0;
-
-  @include respond-above(md) {
-    font-size: 4rem;
-  }
+  font-size: 2.2em;
 }
 
 a {

@@ -86,4 +86,35 @@ export default {
 .markdown {
   padding-bottom: 50vh;
 }
+
+/deep/ table { padding: 0; border-spacing: 0px; }
+/deep/ table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+/deep/ table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+/deep/ table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+/deep/ table tr td {
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px; 
+  font-size: .8em;
+}
+/deep/ table tr th :first-child, /deep/ table tr td :first-child {
+  margin-top: 0;
+}
+/deep/ table tr th :last-child, /deep/ table tr td :last-child {
+  margin-bottom: 0; 
+}
 </style>

@@ -89,6 +89,11 @@
           "slug": "reference/templates"
         },
         {
+          "title": "Config file",
+          "menuId": "config",
+          "slug": "reference/config"
+        },
+        {
           "title": "CLI",
           "menuId": "cli",
           "slug": "reference/cli"

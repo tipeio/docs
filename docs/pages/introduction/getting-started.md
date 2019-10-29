@@ -41,5 +41,4 @@ import Production from '~/sections/getting-started/production.md'
   <Production />
 </Block>
 
-
 <Next message="Nice job 🏆. Keep going to learn how to get the best out of templates." to="/reference/templates"/>

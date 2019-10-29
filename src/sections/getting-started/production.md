@@ -5,7 +5,7 @@ order: 7
 ## Going to production
 In production, you'll want real content from your team.
 
-1. **[Create an account on Tipe](https://tipe.io?rel=cli) and then a new project**
+1. **[Create an account on Tipe](https://tipe.io/signin?rel=docs) and then a new project**
 2. **Push up your templates to your Tipe project**
 ```bash
 tipe push --config tipe.js --project your-project-id --apikey your-api-key

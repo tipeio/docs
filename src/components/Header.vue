@@ -4,6 +4,25 @@
       <Logo :color="logoColor" />
     </div>
     <nav class="nav">
+      <div class="link">
+        <a href="https://tipe.io">Home</a>
+      </div>
+      <div class="link">
+        <a >Pricing</a>
+      </div>
+      <div class="link">
+        <a >Features</a>
+      </div>
+      <div class="link">
+        <a href="https://tipe.io/docs">Docs</a>
+      </div>
+      <div class="link">
+        <a >Blog</a>
+      </div>
+      <div class="link">
+        <a href="https://tipe.io/signin">Signin</a>
+      </div>
+
       <ThemeSwitch v-on:theme-change="updateLogo" />
       <MenuToggle v-if="menuToggle" />
     </nav>
@@ -75,22 +94,22 @@ export default {
   border-bottom: 1px solid transparent;
 
   &--scrolled {
-    @include respond-below(sm) {
+    
       .dark & {
-        background: $sidebarDark;
+        background: $sidebarDark !important;
         border-color: shade($sidebarDark, 40%);
       }
 
       .bright & {
-        background: $sidebarBright;
+        background: $sidebarBright !important;
         border-color: shade($sidebarBright, 10%);
       }
-    }
   }
 }
 
 nav {
   display: flex;
+  align-items: center;
 }
 
 .nav, .logo-container {
@@ -126,5 +145,37 @@ nav {
     }
   }
   
+}
+
+.link {
+  display: none;
+  padding: 0 8px;
+  border-radius: 8px;
+  transition: background .15s linear;
+  &:hover {
+    background: $brandPrimary;
+    a {
+      color: white !important;
+    }
+  }
+
+  a {
+    color: $textBright;
+    transition: color .15s linear;
+    &:visited {
+      color: $textBright;
+    }
+  }
+
+  .dark & a {
+    color: $textDark;
+    &:visited {
+      color: $textDark;
+    }
+  }
+  @include respond-above(sm) {
+    display: unset;
+    margin: 0 1em;
+  }
 }
 </style>

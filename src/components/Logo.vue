@@ -1,15 +1,20 @@
 <template>
-  <g-link to="/" class="logo" title="Back to home">
+  <g-link to="https://tipe.io" class="logo" title="Back to home">
     <transition name="theme">
-      <div v-if="color == 'dark'">
+      <div v-if="color == 'dark'" class="img">
         <g-image src="~/assets/img/logo-bright.svg" alt="logo" />
+        <div class="pill">Docs</div>
       </div>
     </transition>
     <transition name="theme">
-      <div v-if="color == 'bright'">
+      <div v-if="color == 'bright'" class="img">
         <g-image src="~/assets/img/logo-dark.svg" alt="logo" />
+        <div class="pill">
+          <span>DOCS</span>
+        </div>
       </div>
     </transition>
+    
   </g-link>
 </template>
 
@@ -33,16 +38,36 @@ export default {
   position: relative;
   perspective: 200px;
 
-  div {
+  .img {
     height: 40px;
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
+    align-item: center;
   }
 
   img {
     height: 100%;
     width: auto;
+  }
+
+  .pill {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin: 0 10px;
+    font-size: .8em;
+    .dark & {
+      background: $backgroundBright;
+      color: $textBright;
+    }
+
+    .bright & {
+      background: $backgroundDark;
+      color: $textDark;
+    }
   }
 }
 
@@ -53,5 +78,3 @@ export default {
   opacity: 0;
 }
 </style>
-
-

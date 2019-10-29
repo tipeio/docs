@@ -4,7 +4,7 @@ order: 3
 ---
 
 ## Create content templates
-[Content templates]() describe the shape of the content you want to manage in your project. As a developer, you have complete control over the content templates. Content creators on your team will be able to create documents that are based from these templates.
+[Content templates](https://tipe.io/docs/reference/template) describe the shape of the content you want to manage in your project. As a developer, you have complete control over the content templates. Content creators on your team will be able to create documents that are based from these templates.
 
 **Create a file named `tipe.js` on the root on your project.**
 
@@ -25,7 +25,7 @@ module.exports = {
           type: 'text'
         },
         mainCtaButton: {
-          name: 'Hero CTA'
+          name: 'Hero CTA',
           type: 'button'
         }
       }

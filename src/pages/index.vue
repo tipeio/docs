@@ -1,7 +1,6 @@
 <template>
   <Layout :sidebar="false" transparent>
     <div class="content">
-      <h1>Tipe Docs</h1>
       <nav>
         <div class="col">
           <Shortcut link="/introduction/getting-started" text="Getting Started" icon="play-icon" />
@@ -65,7 +64,7 @@ h1,
 h3 {
   text-align: center;
   max-width: 600px;
-  margin: 1.5em auto 1.5em;
+  margin: .5em auto;
 
   @include respond-above(md) {
     max-width: 1000px;

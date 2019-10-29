@@ -12,53 +12,57 @@
 </template>
 
 <script>
-  import Btn from '~/components/Button'
-  export default {
-    components: {
-      Btn
+import Btn from "~/components/Button"
+export default {
+  components: {
+    Btn
+  },
+  props: {
+    message: {
+      type: String,
+      default: "congrats 🏆"
     },
-    props: {
-      message: {
-        type: String,
-        default: 'congrats 🏆'
-      },
-      actionText: {
-        type: String,
-        default: 'next step'
-      },
-      to: {
-        type: String,
-        default: '/'
-      }
+    actionText: {
+      type: String,
+      default: "next step"
+    },
+    to: {
+      type: String,
+      default: "/"
     }
   }
+};
 </script>
 
 <style lang="scss" scoped>
-  .next {
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 6px;
-    border: solid 1px;
-    transition: border .15s ease-in-out;
-  }
+.next {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  border: solid 1px;
+  transition: border 0.15s ease-in-out;
+}
 
-  .message {
-    width: 64%;
-    font-size: 1.2em;
-  }
-  .action {
-    width: 32%;
-    text-align: end;
-  }
+.message {
+  width: 64%;
+  font-size: 1.2em;
 
-  .dark .next {
-    border-color: $sidebarBright;
+  p {
+    margin: 0;
   }
+}
+.action {
+  width: 32%;
+  text-align: end;
+}
 
-  .bright .next {
-    border-color: $sidebarDark;
-  }
+.dark .next {
+  border-color: $sidebarBright;
+}
+
+.bright .next {
+  border-color: $sidebarDark;
+}
 </style>
