@@ -42,13 +42,13 @@ export default {
   },
   metaInfo: {
     title:
-      "The ultimate static generated documentation theme for the JAM-stack",
+      "Tipe",
     meta: [
       {
         key: "description",
         name: "description",
         content:
-          "A theme for static site documentation based on Gridsome, ready to deploy to Netlify in one click."
+          "Tipe is the Content Delivery Service that fits every app and works the way you write"
       }
     ]
   }
