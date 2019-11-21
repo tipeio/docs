@@ -1,5 +1,6 @@
 <template>
     <aside class="sidebar" :class="classes">
+      <SearchBar/>
       <nav>
         <ul>
           <li class="section" v-for="{ node } in $static.menu.edges" :key="node.id">
@@ -58,12 +59,16 @@ query Menu {
 
 <script>
 import throttle from 'lodash/throttle'
+import SearchBar from './SearchBar.vue'
 
 export default {
   data() {
     return {
       logoColor: "bright"
     }
+  },
+  components: {
+    SearchBar
   },
   computed: {
     classes() {

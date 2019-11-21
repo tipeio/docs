@@ -2,6 +2,7 @@
 title: Tipe CLI Reference
 date: 2018-09-15 07:42:34
 slug: reference/cli
+parentId: cli
 ---
 import Next from '~/components/Next.vue'
 import Block from '~/components/Block.vue'

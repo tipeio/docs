@@ -2,6 +2,7 @@
 title: Getting started
 date: 2018-09-15 07:42:34
 slug: introduction/getting-started
+parentId: gettingStarted
 ---
 import Next from '~/components/Next.vue'
 import Block from '~/components/Block.vue'

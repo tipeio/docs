@@ -3,7 +3,57 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+const htmlText = require('html-to-text')
+
 const path = require('path')
+
+const collections = [
+  {
+    query: `{
+      allDoc {
+        edges {
+          node {
+            id
+            slug
+            title
+            parentId
+          } 
+        }
+      }
+      allSection {
+        edges {
+          node {
+            id
+            content
+            parent
+          }
+        }
+      }
+    }`,
+    transformer: ({ data }) => {
+      const content = {
+        docs: data.allDoc.edges.map(({node}) => node),
+        sections: data.allSections.edges.map(({node}) => node)
+      }
+      return content.sections.map((section) => {
+        const parent = content.docs.find((doc) => {
+          return doc.parentId === section.parent
+        })
+        console.log(section.content)
+        const content = htmlText.fromString(section.content)
+        return {...section, content, section: section.title, title: parent.title, slug: parent.slug}
+      })
+    },
+    indexName: 'Docs',
+    itemFormatter: (node) => {
+      return {
+        objectID: node.id,
+        slug: node.slug,
+        content: node.content
+      }
+    }
+  }
+]
 
 function addStyleResource (rule) {
   rule.use('style-resource')
@@ -47,7 +97,16 @@ module.exports = {
       options: {
         cacheTime: 600000
       }
-    }
+    },
+    {
+      use: `gridsome-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        collections,
+        chunkSize: 10000, // default: 1000
+      },
+    },
   ],
   chainWebpack: config => {
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']

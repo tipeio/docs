@@ -2,6 +2,7 @@
 title: tipe.js config file
 date: 2018-09-15 07:42:34
 slug: reference/config
+parentId: config
 ---
 import Next from '~/components/Next.vue'
 import Block from '~/components/Block.vue'

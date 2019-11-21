@@ -2,6 +2,7 @@
 title: Templates
 date: 2018-09-15 07:42:34
 slug: reference/templates
+parentId: templates
 ---
 import Next from '~/components/Next.vue'
 import Block from '~/components/Block.vue'
