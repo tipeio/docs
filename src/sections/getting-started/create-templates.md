@@ -25,7 +25,7 @@ module.exports = {
           type: 'text'
         },
         mainCtaButton: {
-          name: 'Hero CTA'
+          name: 'Hero CTA',
           type: 'button'
         }
       }
